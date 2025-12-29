@@ -1,0 +1,427 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+.pageWrapper {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 100px;
+   animation: slideUp 0.8s ease-out;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 80px 20px;
+}
+
+/* LEFT SIDE */
+.mainImageContainer {
+ background: radial-gradient(circle at center, #2d323e 0%, #1a1d24 100%);
+ 
+  border-radius: 20px;
+  padding: 4em 3em;
+  
+  height: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Surprise: A subtle glow behind the product */
+
+
+.mainImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  /* Hover effect: make the image float slightly */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mainImageContainer:hover .mainImage {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.thumbnailGrid {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.thumb, .activeThumb {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.activeThumb {
+  border: 3px solid #0D59F2;
+}
+
+.thumb img, .activeThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* RIGHT SIDE */
+.title {
+   font-family: Poppins; /* Heading */
+    font-size: 32px; 
+    line-height: 28px; 
+    font-weight: 600; 
+    color: #F3F4F6FF; 
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+   font-family: Poppins; /* Heading */
+    font-size: 18px; 
+    line-height: 28px; 
+    font-weight: 600; 
+    color: #F3F4F6FF; 
+  margin-bottom: 15px;
+}
+
+.stars { color: #FFB800; }
+.ratingText { color: #9ba1b0; font-size: 14px; }
+
+.price {
+  font-size: 26px;
+  font-family: Poppins; /* Heading */
+  line-height: 28px; 
+  font-weight: 600; 
+  font-weight: 800;
+  color: #0D59F2; /* Electric Blue from Design */
+  margin-bottom: 20px;
+}
+
+.description {
+  margin-bottom: 30px;
+  font-family: Roboto; /* Body */
+  font-size: 16px; 
+  line-height: 1.6; 
+  font-weight: 400; 
+  color: #BDC1CAFF; 
+}
+
+.optionLabel {
+  display: block;
+
+  margin-bottom: 0.4em;
+  font-family: Roboto; /* Body */
+  font-size: 14px; 
+  line-height: 20px; 
+  font-weight: 500; 
+  color: #F3F4F6FF; /* neutral-200 */
+
+}
+
+.colorPicker {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.colorCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+
+.purchaseActions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.quantitySelector {
+  display: flex;
+  align-items: center;
+  background: #111;
+  border: 1px solid #323743;
+  border-radius: 8px;
+  padding: 5px 15px;
+  gap: 20px;
+}
+
+.quantitySelector button {
+
+  width: 1em; 
+
+  padding: 0.8em 2em; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #000000FF; /* black */
+  opacity: 1; 
+  border-radius: 10px; 
+  border-width: 1px; 
+  border-color: #323743FF; /* neutral-700 */
+  border-style: solid; 
+  gap: 0px; 
+}
+
+.addToCartBtn {
+  flex: 1;
+  background: #0D59F2;
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.added {
+   background-color: #2ecc71 !important; 
+   animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.wishlistBtn {
+  background: #111;
+  border: 1px solid #323743;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Accordion */
+.accordion {
+  margin-top: 40px;
+  border-top: 1px solid #323743;
+}
+
+.accordionItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-bottom: 1px solid #323743;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.accordionItem span {
+  font-family: Poppins; 
+  font-size: 16px; 
+  line-height: 28px; 
+  font-weight: 600; 
+  color: #F3F4F6FF;
+}
+
+.accordionContent {
+  background-color: rgba(32, 29, 29, 0.466);
+  padding: 0.1em 1.5em;
+   font-family: Poppins; 
+   margin-top: 0.5em;
+   border-radius: 15px;
+  font-size: 12px; 
+  line-height: 20px; 
+  font-weight: 600; 
+  color: #F3F4F6FF;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.accordionItemActive {
+  background-color: rgba(13, 89, 242, 0.03); /* Very faint Bazaarly Blue */
+  padding-left: 10px; /* Slight indent when active */
+}
+
+
+
+.arrow {
+  transition: transform 0.4s ease, color 0.3s ease;
+  color: #6B7280;
+}
+
+.arrowActive {
+  transform: rotate(180deg);
+  color: #0D59F2;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Button */
+
+.sizeSection {
+  margin-top: 24px;
+}
+
+.label {
+  display: block;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.sizeGrid {
+  display: flex;
+  margin-bottom: 1.3em;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sizeBtn {
+  /* Dimensions & Base Style */
+  width: 60px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: #1a1d24; /* Match your deep dark theme */
+  border: 1px solid #323743;
+  border-radius: 12px;
+  
+  color: #9CA3AF;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  
+  /* Smooth transitions for every property */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect for unselected buttons */
+.sizeBtn:hover:not(.active) {
+  border-color: #4B5563;
+  color: #ffffff;
+  transform: translateY(-2px);
+  background: #252a35;
+}
+
+/* The "Fire" Active State */
+.active {
+  background: #0D59F2; /* Bazaarly Blue */
+  border-color: #0D59F2;
+  color: #ffffff;
+  /* Add a soft glow */
+  box-shadow: 0 0 20px rgba(13, 89, 242, 0.4);
+  transform: scale(1.05);
+}
+
+/* Surprise: A subtle light reflection on the active button */
+.active::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Container for the whole suggestions area */
+.suggestionsSection {
+
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.suggestionTitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: Poppins;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* The Grid for the small cards */
+.suggestionsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Individual Card Styling */
+.suggestionCard {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  border-radius: 1434348px;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.suggestionCard:hover {
+  transform: translateY(-5px);
+}
+
+.suggestionImage {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Keeps photos perfectly square */
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  background-color: #f9f9f9;
+}
+
+.suggestionName {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 5px 0;
+  color: #333;
+  /* Truncate text if the title is too long */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suggestionPrice {
+  font-weight: 600;
+  color: #000;
+  font-size: 1rem;
+}
+
+
+.noSize {
+   font-family: 'Poppins';
+  font-size: 12px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+ 
+}

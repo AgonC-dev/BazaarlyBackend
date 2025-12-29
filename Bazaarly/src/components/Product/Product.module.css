@@ -1,0 +1,111 @@
+/* Image */
+.image {
+  width: 360px; 
+  height: 192px; 
+  border-radius: 16px 16px 0px 0px;
+
+}
+
+/* Container */
+.container {
+  display: flex;  
+  gap: 0;
+  flex-direction: column;
+  text-decoration: none;
+  flex-shrink: 2;
+  width: 360px; 
+  height: 353px; 
+  background: #1E2128FF; /* neutral-800 */
+  border-radius: 16px; 
+  box-shadow: 0px 0px 0px #00000000, 0px 1px 2px #000000; /* shadow-custom */
+}
+
+.container:hover {
+   animation: jump 1s infinite alternate;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.title {
+  font-family: Roboto; /* Body */
+  font-size: 18px; 
+  line-height: 23px; 
+  margin-left: 3%;
+  margin-bottom: 0;
+  font-weight: 600; 
+  color: rgb(248, 248, 248); /* neutral-200 */
+}
+
+.price {
+  margin-top: 6%;
+  font-family: Poppins; /* Heading */
+    margin-left: 3%;
+  font-size: 20px; 
+  line-height: 28px; 
+  font-weight: 700; 
+  color: #0D59F2FF; /* primary-500 */
+}
+
+/* Button */
+.button {
+  width: 328px; 
+  height: 40px; 
+  padding: 0 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  margin-left: 3%; 
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+  opacity: 1; 
+  border-radius: 6px; 
+  border-width: 0px; 
+  border-color: #FFFFFFFF; /* white */
+  border-style: solid; 
+  gap: 16px; 
+}
+.button .icon {
+  width: 16px; 
+  height: 16px; 
+  fill: #FFFFFFFF; /* white */
+}
+/* Hover */
+.button:hover {
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+}
+/* Pressed */
+.button:hover:active {
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+}
+/* Disabled */
+.button:disabled {
+  opacity: 0.4; 
+}
+
+.added {
+   background-color: #2ecc71 !important; 
+   animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0); /* Start position (bottom) */
+  }
+  100% {
+    transform: translateY(-10px); /* End position (upwards) */
+  }
+}

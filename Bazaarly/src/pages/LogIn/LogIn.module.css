@@ -1,0 +1,291 @@
+.title {
+  text-align: center;
+  font-family: Poppins; /* Heading */
+  font-size: 30px; 
+  line-height: 36px; 
+  font-weight: 700; 
+  color: #F3F4F6FF; /* neutral-200 */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.logContainer {
+  margin: 0 auto;
+  width: 30%; 
+  min-width: 29%;
+  flex-shrink: 1;
+  height: 46em;
+  display: flex;
+  flex-direction: column;
+  background: #1E2128FF; /* neutral-800 */
+  border-radius: 16px; 
+  border-width: 1px; 
+  border-color: #323743FF; /* neutral-700 */
+  border-style: solid; 
+   animation: fadeIn 0.7s ease-in-out;
+  box-shadow: 0px 0px 0px #00000000, 0px 1px 2px #000000; /* shadow-custom */
+}
+
+.text {
+  text-align: center;
+  font-family: Roboto; /* Body */
+  font-size: 16px; 
+  line-height: 24px; 
+  font-weight: 400; 
+  color: #BDC1CAFF; /* neutral-400 */
+}
+
+.emailCon {
+    gap: 0px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    margin-bottom: 0;
+}
+
+
+
+/* Textbox */
+.label {
+  color: #F3F4F6FF;
+  opacity: 1; 
+  font-family: Roboto; /* Body */
+  font-size: 17px; 
+  line-height: 24px; 
+  font-weight: 400; 
+  margin-left: 18%;
+  margin-top: 1%;
+
+}
+
+.input {
+  width: 350px; 
+  margin: 1% auto;
+  height: 47px; 
+  display: flex;
+  flex-shrink: 2;
+  padding-left: 12px; 
+  padding-right: 12px; 
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400; 
+  background: #1E2128FF; /* neutral-800 */
+  border-radius: 10px; 
+  border-width: 1px; 
+  border-color: #323743FF; /* neutral-700 */
+  border-style: solid; 
+  outline: none; 
+}
+
+/* hover */
+.input:hover {
+  color: #BDC1CAFF; /* neutral-400 */
+  background: #1E2128FF; /* neutral-800 */
+  border-color: #323743FF; /* neutral-700 */
+}
+/* focused */
+.input:focused {
+  color: #BDC1CAFF; /* neutral-400 */
+  background: #1E2128FF; /* neutral-800 */
+  border-color: #323743FF; /* neutral-700 */
+}
+/* disabled */
+.input:disabled {
+  color: #BDC1CAFF; /* neutral-400 */
+  background: #1E2128FF; /* neutral-800 */
+  border-color: #323743FF; /* neutral-700 */
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+  fill: #BDC1CAFF; /* neutral-400 */
+}
+
+
+    /* Button */
+.logIn {
+  text-align: center;
+  margin: 5% auto;
+  width: 68%; 
+  height: 48px; 
+  padding: 0 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: Roboto; 
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 600; 
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+  opacity: 1; 
+  border-radius: 16px; 
+  border-width: 0px; 
+  border-color: #FFFFFFFF; /* white */
+  border-style: solid; 
+}
+/* Hover */
+.logIn:hover {
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+}
+/* Pressed */
+.logIn:hover:active {
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+}
+/* Disabled */
+.logIn:disabled {
+  opacity: 0.4; 
+}
+
+.middle {
+  text-align: center;
+
+  font-family: Roboto; /* Body */
+  font-size: 12px; 
+  line-height: 16px; 
+  font-weight: 400; 
+  color: #BDC1CAFF; /* neutral-400 */
+}
+
+.continue {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    margin: 6% auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.blackButton {
+    /* Container */
+  width: 350px; 
+  height: 48px; 
+  background: #000000FF; /* black */
+  border-radius: 16px; 
+  border-width: 1px; 
+  border-color: #323743FF; /* neutral-700 */
+  border-style: solid; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  font-family: Roboto; /* Body */
+  font-size: 14px; 
+  line-height: 20px; 
+  font-weight: 500; 
+  color: #F3F4F6FF; /* neutral-200 */
+}
+
+.accountText {
+  font-family: Roboto; /* Body */
+  font-size: 14px; 
+  line-height: 20px; 
+  font-weight: 400; 
+  color: #BDC1CAFF; /* neutral-400 */
+}
+
+
+    /* Button */
+.button {
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+  color: #0D59F2FF; /* primary-500 */
+  background: #00000000; /* transparent */
+  opacity: 1; 
+  border: none; 
+  border-radius: 6px; 
+}
+/* Hover */
+.button:hover {
+  color: #0D59F2FF; /* primary-500 */
+  background: #00000000; /* black */
+}
+/* Pressed */
+.button:hover:active {
+  color: #0D59F2FF; /* primary-500 */
+  background: #00000000; /* black */
+}
+/* Disabled */
+.button:disabled {
+  opacity: 0.4; 
+}
+
+.accDiv {
+    text-align: center;
+  
+ 
+    
+}
+
+.error {
+  background-color: rgb(143, 26, 26);
+  width: 80%;
+  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-radius: 15px;
+  color: rgb(197, 181, 181);
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+}
+
+.forget {
+  margin: 0 auto;
+  width: 65%;
+ 
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+  color: #0D59F2FF;
+
+
+}
+
+.resetBtn {
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+/* Button */
+
+.successBox {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 10px;
+  margin: 0%;
+  color: white;
+   font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+
+}
+
+.successBox button {
+  height: fit-content;
+  text-align: center;
+  background: none;
+  border: none;
+   font-family: Roboto; 
+  font-size: 20px; 
+  color: red;
+  line-height: 22px; 
+  font-weight: bolder; 
+
+}

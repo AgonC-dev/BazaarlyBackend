@@ -1,0 +1,375 @@
+/* Container */
+.signUpContainer  {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  width: 59%;
+  height: 45.5em; 
+  padding: 0%;
+  animation: fadeIn 0.7s ease-in-out;
+  gap: 0;
+  background: #1E2128FF; /* neutral-800 */
+  border-radius: 16px; 
+  box-shadow: 0px 0px 0px #00000000, 0px 25px 50px #00000040; /* shadow-custom */
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Image */
+.image {
+  width: inherit; 
+  height: 100%; 
+  border-radius: 0px 16px 16px 0px; 
+  background-color: blue;
+  margin: 0;
+}
+
+.leftCon {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+
+  width: 100%; 
+  font-family: Poppins; /* Heading */
+  font-size: 30px; 
+  line-height: 36px; 
+  font-weight: 700; 
+  color: #F3F4F6FF; /* neutral-200 */
+}
+
+.text {
+  max-width: 100%;
+  width: 100%;
+  text-align: center; 
+  font-family: Roboto; /* Body */
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 400; 
+  color: #BDC1CAFF; /* neutral-400 */
+}
+
+/* Textbox */
+
+
+.inputCon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  gap: 5px;
+}
+
+.input {
+  width: 100%; 
+  background-color: red;
+  height: 45px; 
+  color: #BDC1CAFF;
+  padding-left: 12px; 
+  padding-right: 12px; 
+  font-family: Roboto; 
+  margin-bottom: 3%;
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400; 
+  background: #000000FF; /* black */
+  border-radius: 10px; 
+  border-width: 1px; 
+  border-color: #323743FF; /* neutral-700 */
+  border-style: solid; 
+  outline: none; 
+  opacity: 1; 
+}
+
+.label {
+  color: #F3F4F6FF;
+  opacity: 1; 
+  font-family: Roboto; /* Body */
+  font-size: 17px; 
+  line-height: 24px; 
+  font-weight: 400; 
+  margin-left: 1%;
+}
+/* hover */
+.input:hover {
+  color: #BDC1CAFF; /* neutral-400 */
+  background: #000000FF; /* black */
+  border-color: #323743FF; /* neutral-700 */
+}
+/* focused */
+.input:focused {
+  color: #BDC1CAFF; /* neutral-400 */
+  background: #000000FF; /* black */
+  border-color: #323743FF; /* neutral-700 */
+}
+/* disabled */
+.input:disabled {
+  color: white; /* neutral-400 */
+  background: #000000FF; /* black */
+  border-color: #323743FF; /* neutral-700 */
+}
+.input:disabled + .icon, .textbox :disabled + .icon + .icon {
+  fill: #BDC1CAFF; /* neutral-400 */
+}
+
+/* Checkbox */
+/* Wrapper */
+.checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hide the native checkbox */
+.checkbox input {
+  display: none;
+}
+
+.terms {
+  font-family: Roboto; /* Body */
+  font-size: 14px; 
+  line-height: 14px; 
+  font-weight: 500; 
+  color: #BDC1CAFF; /* neutral-400 */
+}
+
+/* Outer box (make bigger here!) */
+.outerSquare {
+  width: 24px;          /* bigger */
+  height: 24px;         /* bigger */
+  border-radius: 4px;
+  border: 2px solid #565D6DFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+/* Tick icon */
+.outerSquare svg {
+  width: 16px;          /* bigger */
+  height: 16px;         /* bigger */
+  display: none;
+}
+
+/* Hover */
+.checkbox:hover .outerSquare {
+  opacity: 0.6;
+}
+
+/* CHECKED STATE */
+.checkbox input:checked + .outerSquare {
+  background: #0D59F2FF;
+  border-color: #0D59F2FF;
+}
+
+.checkbox input:checked + .outerSquare svg {
+  display: block;
+}
+
+.termsCon {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+
+
+  /* Button */
+.signUpBtn {
+  text-align: center;
+  margin: 2% auto;
+  align-self: center;
+  width: 80%; 
+  height: 48px; 
+  padding: 0 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: Roboto; 
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 500; 
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+  opacity: 1; 
+  border-radius: 10px; 
+  border-width: 0px; 
+  border-color: #FFFFFFFF; /* white */
+  border-style: solid; 
+}
+/* Hover */
+.signUpBtn:hover {
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+}
+/* Pressed */
+.signUpBtn:hover:active {
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+}
+/* Disabled */
+.signUpBtn:disabled {
+  opacity: 0.4; 
+}
+
+.accQuestionCon {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 1%;
+  justify-content: center;
+}
+
+.questionText {
+  font-family: Roboto; /* Body */
+  font-size: 14px; 
+  line-height: 20px; 
+  font-weight: 400; 
+  color: #BDC1CAFF; /* neutral-400 */
+}
+
+/* Button */
+.questionLink {
+  width: 8%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+  color: #0D59F2FF; /* primary-500 */
+  background: #00000000; /* transparent */
+  opacity: 1; 
+  border: none; 
+  border-radius: 6px; 
+}
+/* Hover */
+.questionLink:hover {
+  color: #0D59F2FF; /* primary-500 */
+  background: #00000000; /* black */
+}
+/* Pressed */
+.questionLink:hover:active {
+  color: #0D59F2FF; /* primary-500 */
+  background: #00000000; /* black */
+}
+/* Disabled */
+.questionLink:disabled {
+  opacity: 0.4; 
+}
+
+.error {
+  background-color: rgb(143, 26, 26);
+  width: 80%;
+  padding: 2%;
+  letter-spacing: 0.5px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 15px;
+  color: rgb(197, 181, 181);
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* 1. Laptops and Large Tablets (Max width 1024px) */
+@media (max-width: 1024px) {
+  .signUpContainer {
+    width: 85%; /* Increase width to give more room */
+    height: auto; /* Allow height to grow with content */
+    padding-bottom: 2rem;
+  }
+
+  .image {
+    display: none; /* Often best to hide the side image on medium screens to save space */
+  }
+
+  .right {
+    display: none;
+  }
+
+  .leftCon {
+    width: 100%;
+  }
+}
+
+/* 2. Tablets (Max width 768px) */
+@media (max-width: 768px) {
+  .signUpContainer {
+    width: 90%;
+    flex-direction: column; /* Ensure vertical stack */
+    height: auto;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .inputCon {
+    width: 85%; /* Wider inputs for easier tapping */
+  }
+
+  .signUpBtn {
+    width: 85%;
+  }
+
+  .termsCon {
+    width: 85%;
+    margin: 0 auto;
+    justify-content: flex-start;
+  }
+}
+
+/* 3. Mobile Phones (Max width 480px) */
+@media (max-width: 480px) {
+  .signUpContainer {
+    width: 95%;
+    margin: 10px auto;
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 22px;
+    padding: 0 10px;
+  }
+
+  .text {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 15px;
+  }
+
+  .inputCon {
+    width: 90%;
+  }
+
+  .label {
+    font-size: 15px;
+  }
+
+  .signUpBtn {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .questionLink {
+    width: auto; /* Allow link to fit text width */
+    padding: 0 5px;
+  }
+}

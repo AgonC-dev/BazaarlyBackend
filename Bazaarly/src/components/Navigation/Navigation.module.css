@@ -1,0 +1,365 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: black;
+}
+
+
+.list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 72px;
+  background-color: #000000E6;
+  border-radius: 0px 0px 0px 0px; 
+  box-shadow: 0px 0px 0px #00000000, 0px 0px 2px #171a1f14;
+}
+
+.left {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 15%;
+   
+}
+
+.cartItemNum {
+   font-family: Roboto; 
+  font-size: 18px; 
+  line-height: 22px; 
+  color: lightgray;
+  margin: 3px;
+  font-weight: 500; 
+}
+
+.logo {
+  width: 17em;
+  height: 12em;
+  margin: 0;
+}
+
+/* Button */
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px; /* Increased horizontal padding for a better shape */
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6B7280; /* Softer neutral color for inactive state */
+  background: transparent;
+  border-radius: 8px; /* Slightly rounder for a modern look */
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover: Only a light grey tint or just change text color */
+.navButton:hover {
+  color: #111827; /* Darker text on hover */
+  background: #F3F4F6; /* Very light subtle background */
+}
+
+/* Active: The only state with a strong background */
+.active {
+  background: #0d59f2; 
+  color: #ffffff !important; /* Force white text when active */
+}
+
+/* Pressed effect */
+.navButton:active {
+  transform: scale(0.96);
+}
+
+
+/* SearchButton */
+.search {
+  width: 40px; 
+  height: 40px; 
+  padding: 0 10px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #00000000; /* transparent */
+  opacity: 1; 
+  border: none; 
+  border-radius: 6px; 
+  gap: 0px; 
+}
+.search .icon {
+  width: 20px; 
+  height: 20px; 
+  fill: #F3F4F6FF; /* neutral-200 */
+}
+/* Hover */
+.search:hover {
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #00000000; /* black */
+}
+/* Pressed */
+.search:hover:active {
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #00000000; /* black */
+}
+/* Disabled */
+.search:disabled {
+  opacity: 0.4; 
+}
+
+
+
+/* Avatar */
+.avatar {
+  width: 36px; 
+  height: 36px; 
+  background: #E3FAF6FF; 
+  opacity: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+  border-radius: 18px; 
+}
+.avatar img {
+  width: 36px; 
+  height: 36px; 
+}
+.avatar .badge {
+  width: 9px; 
+  height: 9px; 
+  border-radius: 4.5px; 
+}
+.avatar.active .badge {
+  background: #33CC33FF; /* success */
+  opacity: 1; 
+  border-width: 1.5px; 
+  border-color: #FFFFFFFF; 
+}
+.avatar.inactive .badge {
+  background: #33CC33FF; /* success */
+  opacity: 1; 
+  border-width: 1.5px; 
+  border-color: #FFFFFFFF; 
+}
+.avatar.idle .badge {
+  background: #33CC33FF; /* success */
+  opacity: 1; 
+  border-width: 1.5px; 
+  border-color: #FFFFFFFF; 
+}
+.avatar.do_not_disturb .badge {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 9px; 
+  line-height: 9px; 
+  color: #FFFFFFFF; /* white */
+  background: #33CC33FF; /* success */
+  opacity: 1; 
+  border-width: 1.5px; 
+  border-color: #FFFFFFFF; 
+}
+
+
+.profileWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Adds a green glow to the avatar when logged in */
+.loggedIn {
+  border: 2px solid #4CAF50 !important;
+}
+
+.dropdown {
+  position: absolute;
+  top: 3.7em; /* Adjust based on your nav height */
+  right: 0;
+  background: black;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 200px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.userInfo {
+  padding: 12px;
+  background-color: black;
+  color: white;
+  font-family: Roboto; 
+  text-decoration: none;
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+}
+
+.logoutBtn {
+  text-align: left;
+  padding: 10px 15px;
+  background: none;
+  border: none;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+.logoutBtn:hover {
+  background-color: #fff5f5;
+}
+
+.break {
+  width: 100%;
+  height: 100%;
+}
+
+.profileClick {
+  text-decoration: none;
+  font-family: Roboto; 
+  text-decoration: none;
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+  color: white;
+    padding: 8px 10px;
+    padding-top: 0;
+}
+
+/* --- Responsiveness for Navigation --- */
+
+@media (max-width: 1024px) {
+  .right {
+    width: 25%; /* Give more space to icons on medium screens */
+  }
+  .logo {
+    width: 12em; /* Shrink logo slightly */
+  }
+}
+
+/* --- Bottom App-style Navbar for Mobile --- */
+
+@media (max-width: 768px) {
+  /* 1. Fix the container to the bottom */
+  .container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto; /* Remove the top: 0 */
+    width: 100%;
+    height: 65px; /* Standard mobile nav height */
+    background-color: #121212; /* Solid dark color for app feel */
+    border-top: 1px solid #323743FF;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px;
+    border-radius: 0; /* Remove top radius */
+  }
+
+  /* 2. Hide the logo on the bottom bar */
+  .left > a {
+    display: none; 
+  }
+
+  /* 3. Re-style the list to spread across the screen */
+  .list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  /* 4. Make buttons look like app tabs */
+  .navButton {
+    flex-direction: column;
+    font-size: 10px; /* Small text under icons */
+    padding: 5px;
+    color: #BDC1CAFF;
+  }
+
+  .navButton.active {
+    background: transparent; /* Remove the blue pill background on mobile */
+    color: #0d59f2 !important; /* Just change text/icon color */
+  }
+
+  /* 5. Adjust the right-side icons (Search, Cart, Profile) */
+  .right {
+    position: absolute;
+    top: -80px; /* Float the search/cart above the bar? Or keep them inside? */
+    /* Alternative: Move them into the main list */
+    display: none; 
+  }
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+  .logo {
+    width: 8em;
+  }
+  
+  .search {
+    width: 30px;
+  }
+
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* --- MOBILE BOTTOM NAV --- */
+
+@media (max-width: 768px) {
+  .container { /* Change this to your actual Nav class name */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: rgba(10, 10, 10, 0.8); /* Glass effect */
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-around; /* Spreads links evenly */
+    align-items: center;
+    z-index: 1000; /* Keeps it on top of products */
+    padding: 0 10px;
+  }
+
+  /* Make sure the rest of the app doesn't get cut off at the bottom */
+  :global(body) {
+    padding-bottom: 70px; 
+  }
+}

@@ -1,0 +1,35 @@
+.productList {
+    display: flex;
+    gap: 50px;
+    border: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-shrink: 4;
+    margin: 0 auto;
+}
+
+.loading {
+    color: white;
+    text-align: center;
+    padding: 1.5%;
+    margin: 0 auto;
+    width: 30%;
+    border-radius: 20px;
+    background-color: lightcoral;
+    font-family: Roboto; 
+    font-size: 25px; 
+    line-height: 23px; 
+}
+
+.errorMsg {
+    color: red;
+    text-align: center;
+       font-family: Roboto; 
+    font-size: 18px;
+    font-weight: 500; 
+    line-height: 23px; 
+}
+
+
+
+

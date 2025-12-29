@@ -1,0 +1,255 @@
+/* --- ANIMATIONS --- */
+@keyframes slideDown {
+  from { 
+    opacity: 0; 
+    transform: translateY(-12px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- MAIN CONTAINER --- */
+.container {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #1E2128FF; /* Your custom background */
+  border-radius: 16px;
+  color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  letter-spacing: -1px;
+}
+
+/* --- SECTIONS --- */
+.EmSection, .section {
+  margin-bottom: 35px;
+}
+
+.label {
+  color: #8a919e;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 12px;
+}
+
+/* --- VIEW STATE (Static Email Display) --- */
+.viewRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 18px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.viewRow:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.value {
+  font-size: 1.1rem;
+  color: #ffffff; /* Ensures text is visible */
+  margin: 0;
+}
+
+/* --- FORMS & INPUTS --- */
+.editRow, .passForm, .deleteForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.input {
+  padding: 14px 18px;
+  background: #16191f;
+  border: 1px solid #3f4451;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #ffffff;
+  background: #1E2128;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.input::placeholder {
+  color: #61697a;
+}
+
+/* --- WHITE GLOW BUTTONS --- */
+.editBtn, .saveBtn {
+  background: #0D59F2FF;;
+  color: #ccd1db;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.saveBtn {
+  padding: 15px;
+  width: 100%;
+}
+
+.editBtn:hover, .saveBtn:hover {
+  transform: translateY(-3px);
+  background: #0D59F2FF;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 
+              0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.editBtn:active, .saveBtn:active {
+  transform: translateY(-1px);
+}
+
+.cancelBtn {
+  background: transparent;
+  color: #8a919e;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- INTENSE RED DANGER ZONE --- */
+.deleteCon {
+  margin-top: 50px;
+  padding: 28px;
+  border-radius: 14px;
+  background: rgba(255, 0, 0, 0.04);
+  border: 1px solid rgba(255, 50, 50, 0.25);
+}
+
+.dangerTitle {
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  margin-top: 0;
+  font-weight: 700;
+}
+
+.deleteInitBtn {
+  width: 100%;
+  padding: 15px;
+  background: #9c0c0c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteInitBtn:hover {
+  background: #ff3333;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.deleteConfirmBtn {
+  background: #ff0000;
+  color: white;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteConfirmBtn:disabled {
+  background: #3d1414;
+  color: #7a5050;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.warningText {
+  color: #ffb3b3;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* --- FEEDBACK --- */
+.successMsg, .errorMsg {
+  margin-top: 25px;
+  padding: 14px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+  animation: slideDown 0.3s ease;
+}
+
+.successMsg { 
+  background: rgba(46, 204, 113, 0.15); 
+  color: #2ecc71; 
+}
+
+.errorMsg { 
+  background: rgba(231, 76, 60, 0.15); 
+  color: #e74c3c; 
+}
+
+/* --- CHECKBOX --- */
+.checkboxRow {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 18px 0;
+}
+
+.checkbox {
+  accent-color: #ff0000;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  color: #bdc3c7;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  cursor: pointer;
+}

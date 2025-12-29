@@ -1,0 +1,260 @@
+
+/* Container */
+
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  background-color: green;
+  align-items: center;
+  width: 38em; 
+  height: 128px; 
+  background: #1E2128FF; /* neutral-800 */
+  border-radius: 16px; 
+  box-shadow: 0px 0px 0px #00000000, 0px 1px 2px #000000; /* shadow-custom */
+}
+
+/* Image */
+.image {
+  width: 9em; 
+
+  border-radius: 6px; 
+  border-width: 1px; 
+  border-color: #323743FF; /* neutral-700 */
+  border-style: solid; 
+}
+
+.priceCon {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+   
+}
+
+
+.left {
+  display: flex;
+
+  width: 100%;
+  gap: 5%;
+  padding: 2%;
+}
+
+.title {
+  font-family: Poppins; /* Heading */
+  font-size: 18px; 
+
+  margin: 0;
+  line-height: 28px; 
+  font-weight: 600; 
+  color: #F3F4F6FF; /* neutral-200 */
+}
+
+.category {
+  font-family: Roboto; /* Body */
+  font-size: 14px; 
+  line-height: 20px; 
+  font-weight: 400; 
+  margin: 0;
+  color: #BDC1CAFF; /* neutral-400 */
+}
+
+
+.text {
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: center;
+}
+
+.quantity {
+  display: flex;
+  
+}
+
+.price {
+  font-family: Roboto; /* Body */
+  font-size: 18px; 
+  line-height: 28px; 
+  margin: 0;
+  text-align: center;
+  font-weight: 500; 
+  color: #F3F4F6FF; /* neutral-200 */
+}
+
+/* Textbox */
+.textbox {
+  opacity: 1; 
+}
+
+.quantityCon {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.textbox input::-webkit-outer-spin-button,
+.textbox input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sizeWrapper {
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sizeLabel {
+  font-size: 12px;
+  color: #6B7280; /* Subtle gray */
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.sizeValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0D59F2; /* Bazaarly Blue */
+  background: rgba(13, 89, 242, 0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.textbox input {
+  width: 4em;
+  text-align: center; 
+  margin: 0;
+  height: 32px; 
+  padding-left: 12px; 
+  padding-right: 12px; 
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400; 
+  background: #000000FF; /* black */
+  border-radius: 6px; 
+  border-width: 1px; 
+  border-color: #323743FF; /* neutral-700 */
+  border-style: solid; 
+  outline: none; 
+  color: #F3F4F6FF;
+}
+/* hover */
+.textbox input:hover {
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #000000FF; /* black */
+  border-color: #323743FF; /* neutral-700 */
+}
+/* focused */
+.textbox input:focus {
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #000000FF; /* black */
+  border-color: #323743FF; /* neutral-700 */
+}
+/* disabled */
+.textbox input:disabled {
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #000000FF; /* black */
+  border-color: #323743FF; /* neutral-700 */
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+  fill: #F3F4F6FF; /* neutral-200 */
+    color: #F3F4F6FF;
+}
+
+/* Button */
+.measure {
+  width: 2em; 
+  height: 32px; 
+  padding: 0 10px; 
+  font-size: 1em;
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #00000000; /* transparent */
+  opacity: 1; 
+  border: none; 
+  border-radius: 6px; 
+  gap: 0px; 
+}
+.measure .icon {
+  width: 16px; 
+  height: 16px; 
+  fill: #F3F4F6FF; /* neutral-200 */
+}
+/* Hover */
+.measure:hover {
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #00000000; /* black */
+}
+/* Pressed */
+.measure:hover:active {
+  color: #F3F4F6FF; /* neutral-200 */
+  background: #00000000; /* black */
+}
+/* Disabled */
+.measure:disabled {
+  opacity: 0.4; 
+  color: #F3F4F6FF;
+}
+
+
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  width: 7em;
+}
+
+.delete p {
+  font-family: Roboto; /* Body */
+  font-size: 18px; 
+  line-height: 28px; 
+  font-weight: 600; 
+  color: #F3F4F6FF; /* neutral-200 */
+}
+
+/* Button */
+.btn {
+  width: 50%; 
+  height: 100%; 
+  padding: 0 10px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+ color: #E05269FF; /* danger-500 */
+  background: #00000000; /* transparent */
+  opacity: 1; 
+  border: none; 
+  border-radius: 6px; 
+  gap: 0px; 
+}
+.btn .icon {
+  width: 24px; 
+  fill:  currentColor;
+  height: 24px; 
+ 
+  /* danger-500 */
+}
+/* Hover */
+.btn:hover {
+  color: #E05269FF; /* danger-500 */
+  background: #00000000; /* black */
+}
+/* Pressed */
+.btn:hover:active {
+  color: #E05269FF; /* danger-500 */
+  background: #00000000; /* black */
+}
+/* Disabled */
+.btn:disabled {
+  opacity: 0.4; 
+}
+

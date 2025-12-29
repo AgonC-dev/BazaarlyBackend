@@ -1,0 +1,106 @@
+/* Contact.module.css */
+
+.container {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 0 20px;
+  animation: slideUp 0.8s ease-out;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.headerArea {
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: -2px;
+  /* Subtle gradient to make the white text look "expensive" */
+  background: linear-gradient(to bottom, #ffffff, #a1a1a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #9ba1b0;
+  font-size: 1.1rem;
+  max-width: 400px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* More spacing for a premium feel */
+}
+
+.inputGroup {
+  position: relative; /* For the focus underline effect */
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #0D59F2FF; /* Your brand blue as the accent */
+  margin-bottom: 12px;
+}
+
+.inputGroup input, 
+.inputGroup textarea {
+  background: transparent; /* No box background */
+  border: none;
+  border-bottom: 2px solid #323743; /* Just an underline */
+  padding: 12px 0;
+  color: #ffffff;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.inputGroup input:focus, 
+.inputGroup textarea:focus {
+  outline: none;
+  border-bottom-color: #0D59F2FF; /* Underline turns blue */
+  /* This adds a tiny "glow" under the line */
+  box-shadow: 0 4px 10px -5px rgba(13, 89, 242, 0.4);
+}
+
+.submitBtn {
+  align-self: flex-start; /* Button doesn't stretch, looks cleaner */
+  background: #0D59F2FF;
+  color: #ffffff;
+  border: none;
+  padding: 18px 45px;
+  border-radius: 50px; /* Capsule shape */
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submitBtn:hover {
+  background: #fff; /* Invert colors on hover */
+  color: #0D59F2FF;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2.2rem; }
+  .submitBtn { width: 100%; justify-content: center; } /* Full width only on mobile */
+}

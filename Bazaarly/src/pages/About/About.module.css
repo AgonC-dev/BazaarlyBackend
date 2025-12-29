@@ -1,0 +1,149 @@
+/* About.module.css */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  color: #e0e0e0; /* Off-white text for better readability */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+animation: slideUp 0.8s ease-out;
+}
+
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Section common styles */
+.section1, .section2, .section3, .section4, .section5 {
+  margin-bottom: 80px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Section 1: Hero Header */
+.section1 {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.image {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+.section1 h1 {
+  font-size: 3rem;
+  letter-spacing: -1px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Section 2: Technical Grid */
+.section2 h2, .section3 h2, .section4 h2 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  border-left: 4px solid #4a90e2; /* Accent blue stripe */
+  padding-left: 15px;
+  margin-bottom: 30px;
+}
+
+.section2Text {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #333;
+  margin-bottom: 15px;
+  transition: transform 0.2s ease;
+}
+
+.section2Text:hover {
+  transform: translateX(10px);
+  border-color: #4a90e2;
+}
+
+.section2Text strong {
+  display: block;
+  color: #4a90e2;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+/* Section 3 & 4: Narrative Text */
+.section3 p, .section4 p {
+  color: #b0b0b0;
+  font-size: 1.1rem;
+}
+
+/* Section 5: Contact Links */
+/* Section 5: The Contact Grid */
+.section5 {
+  background: linear-gradient(145deg, #1a1a1a, #141414);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  display: grid;
+  /* This creates 3 columns that stack on mobile */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #4a90e2; /* Blue label to match headers */
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+/* Base style for links and spans in section 5 */
+.contactItem a, 
+.contactItem span:not(.label) {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  word-break: break-word; /* Prevents long emails from breaking layout */
+}
+
+/* Hover effect for the email link */
+.contactItem a:hover:not(.href) {
+  color: #4a90e2;
+}
+
+/* Keep your existing .href style but adjust width for the grid */
+.href {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  width: fit-content; /* Changed from 60% to fit-content for better grid scaling */
+  border-radius: 6px;
+  background: rgba(74, 144, 226, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(74, 144, 226, 0.2);
+  display: inline-block;
+  text-align: center;
+}
+
+.href:hover {
+  background: #4a90e2;
+  color: #ffffff !important;
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.3);
+  transform: translateY(-2px);
+}
