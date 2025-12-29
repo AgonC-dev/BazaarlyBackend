@@ -24,6 +24,6 @@ dist-ssr
 *.sw?
 
 # Backend secrets
-backend/serviceAccountKey.json
+backend/ServiceAccountKey.json
 backend/.env
 node_modules/
