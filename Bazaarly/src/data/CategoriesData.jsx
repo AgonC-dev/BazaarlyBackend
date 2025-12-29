@@ -1,9 +1,9 @@
 import LaptopIcon from '../assets/laptopicon.svg';
 import ShirtIcon from '../assets/shirtIcon.svg';
-import HomeIcon from '../assets/Home Icon.svg';
+import HomeIcon from '../assets/home-icon.svg';
 import BookIcon from '../assets/book icon.svg';
 import BeautyIcon from '../assets/BeautyIcon.svg';
-import GamingIcon from '../assets/Gaming Icon.svg';
+import GamingIcon from '../assets/gaming-icon.svg';
 
 
 export const CATEGORIES_DATA = [
