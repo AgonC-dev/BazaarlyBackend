@@ -1,27 +1,21 @@
-// backend/firebase.js
 const admin = require('firebase-admin');
 
-let serviceAccount;
-
 try {
-  const secretStr = process.env.FIREBASE_SERVICE_ACCOUNT;
-  if (!secretStr) throw new Error("FIREBASE_SERVICE_ACCOUNT is missing from Railway Variables!");
-  
-  // Fixes potential escaped newline issues
-  serviceAccount = JSON.parse(secretStr);
-  if (serviceAccount.private_key) {
+  const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+
+  // This is the "magic" line that fixes the hang
+  if (serviceAccount.private_key && !serviceAccount.private_key.includes('\n')) {
     serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
   }
-} catch (error) {
-  console.error("❌ Firebase Secret Parse Error:", error.message);
-  // This will show up in your Railway logs so you know if the JSON is bad
-}
 
-if (!admin.apps.length && serviceAccount) {
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-  });
+  if (!admin.apps.length) {
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+    });
+  }
   console.log("✅ Firebase Admin Initialized");
+} catch (error) {
+  console.error("❌ Firebase Init Error:", error);
 }
 
 const db = admin.firestore();
