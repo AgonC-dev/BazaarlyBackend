@@ -34,5 +34,5 @@ app.get('/products/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT ;
+const PORT = 3000 ;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
