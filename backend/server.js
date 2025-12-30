@@ -13,7 +13,11 @@ const cors = require('cors');
 const { fetchProducts, fetchProductById } = require('./fetchProducts.js');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://bazaarly-backend.vercel.app', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // Endpoint to fetch products
