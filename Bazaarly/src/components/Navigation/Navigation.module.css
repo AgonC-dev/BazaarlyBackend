@@ -259,107 +259,108 @@ html, body {
 
 /* --- Responsiveness for Navigation --- */
 
+/* --- Responsiveness for Navigation --- */
+
 @media (max-width: 1024px) {
   .right {
-    width: 25%; /* Give more space to icons on medium screens */
+    width: 25%;
   }
   .logo {
-    width: 12em; /* Shrink logo slightly */
+    width: 12em;
   }
 }
 
-/* --- Bottom App-style Navbar for Mobile --- */
-
+/* --- MOBILE LAYOUT (Phones) --- */
 @media (max-width: 768px) {
-  /* 1. Fix the container to the bottom */
+  /* 1. The main container stays at the TOP for Logo/Cart/Profile */
   .container {
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-    top: auto; /* Remove the top: 0 */
-    width: 100%;
-    height: 65px; /* Standard mobile nav height */
-    background-color: #121212; /* Solid dark color for app feel */
-    border-top: 1px solid #323743FF;
-    z-index: 1000;
+    height: 60px;
+    background-color: #000000;
+    padding: 0 15px;
     display: flex;
-    justify-content: space-around;
-    padding: 0 10px;
-    border-radius: 0; /* Remove top radius */
+    justify-content: space-between; /* Logo left, Icons right */
+    z-index: 1001;
   }
 
-  /* 2. Hide the logo on the bottom bar */
-  .left > a {
-    display: none; 
-  }
-
-  /* 3. Re-style the list to spread across the screen */
-  .list {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    gap: 0;
-  }
-
-  /* 4. Make buttons look like app tabs */
-  .navButton {
-    flex-direction: column;
-    font-size: 10px; /* Small text under icons */
-    padding: 5px;
-    color: #BDC1CAFF;
-  }
-
-  .navButton.active {
-    background: transparent; /* Remove the blue pill background on mobile */
-    color: #0d59f2 !important; /* Just change text/icon color */
-  }
-
-  /* 5. Adjust the right-side icons (Search, Cart, Profile) */
-  .right {
-    position: absolute;
-    top: -80px; /* Float the search/cart above the bar? Or keep them inside? */
-    /* Alternative: Move them into the main list */
-    display: none; 
-  }
-}
-
-/* For very small phones */
-@media (max-width: 480px) {
-  .logo {
-    width: 8em;
+  /* 2. Style the Top Left (Logo only) */
+  .left {
+    width: auto;
   }
   
+  .left .logo {
+    width: 120px; /* Smaller logo for mobile */
+    height: auto;
+  }
+
+  /* 3. Style the Top Right (Cart & Profile only) */
+  .right {
+    width: auto;
+    gap: 15px;
+    display: flex;
+  }
+
+  /* Hide Search on small mobile to save space if needed */
   .search {
-    width: 30px;
+    display: none; 
   }
 
-  .avatar {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-/* --- MOBILE BOTTOM NAV --- */
-
-@media (max-width: 768px) {
-  .container { /* Change this to your actual Nav class name */
+  /* 4. THE BOTTOM BAR: Move the <ul> List to the bottom */
+  .list {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 65px;
-    background: rgba(10, 10, 10, 0.8); /* Glass effect */
-    backdrop-filter: blur(15px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid #323743FF;
     display: flex;
-    justify-content: space-around; /* Spreads links evenly */
+    justify-content: space-around; /* Evenly space: Home, Products, About, Contact */
     align-items: center;
-    z-index: 1000; /* Keeps it on top of products */
-    padding: 0 10px;
+    padding: 0;
+    z-index: 1000;
   }
 
-  /* Make sure the rest of the app doesn't get cut off at the bottom */
+  /* 5. Mobile Nav Buttons */
+  .navButton {
+    font-size: 11px;
+    padding: 10px;
+    color: #BDC1CAFF;
+    background: transparent;
+  }
+
+  .active {
+    background: transparent; /* No blue pill background on bottom bar */
+    color: #0d59f2 !important; /* Just highlight the text color */
+    border-bottom: 2px solid #0d59f2;
+    border-radius: 0;
+  }
+
+  /* 6. Push page content so it doesn't hide under fixed bars */
   :global(body) {
-    padding-bottom: 70px; 
+    padding-top: 65px;
+    padding-bottom: 70px;
+  }
+
+  /* Ensure dropdown appears correctly from the top bar */
+  .dropdown {
+    top: 50px;
+    position: fixed;
+    right: 10px;
+  }
+}
+
+/* For very small phones */
+@media (max-width: 480px) {
+  .left .logo {
+    width: 100px;
+  }
+  
+  .navButton {
+    font-size: 10px;
+    padding: 5px;
   }
 }

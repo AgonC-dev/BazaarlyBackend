@@ -1,98 +1,111 @@
-/* Image */
-.image {
-  width: 360px; 
-  height: 192px; 
-  border-radius: 16px 16px 0px 0px;
-
-}
-
-/* Container */
 .container {
-  display: flex;  
-  gap: 0;
+  display: flex;
   flex-direction: column;
+  background: #1E2128FF;
+  border-radius: 12px;
+  box-shadow: 0px 1px 2px #000000;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  overflow: hidden;
   text-decoration: none;
-  flex-shrink: 2;
-  width: 360px; 
-  height: 353px; 
-  background: #1E2128FF; /* neutral-800 */
-  border-radius: 16px; 
-  box-shadow: 0px 0px 0px #00000000, 0px 1px 2px #000000; /* shadow-custom */
+  
+  /* MOBILE STYLE: Small Image Only */
+  width: 140px; 
+  height: 140px; 
 }
 
 .container:hover {
-   animation: jump 1s infinite alternate;
+  animation: jump 1s infinite alternate;
 }
 
 .link {
   text-decoration: none;
+  height: 100%;
+  width: 100%;
 }
 
-.title {
-  font-family: Roboto; /* Body */
-  font-size: 18px; 
-  line-height: 23px; 
-  margin-left: 3%;
-  margin-bottom: 0;
-  font-weight: 600; 
-  color: rgb(248, 248, 248); /* neutral-200 */
+.image {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-.price {
-  margin-top: 6%;
-  font-family: Poppins; /* Heading */
-    margin-left: 3%;
-  font-size: 20px; 
-  line-height: 28px; 
-  font-weight: 700; 
-  color: #0D59F2FF; /* primary-500 */
+/* Hide text and buttons on mobile thumbnails */
+.title, .price, .button {
+  display: none;
 }
 
-/* Button */
-.button {
-  width: 328px; 
-  height: 40px; 
-  padding: 0 12px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-  margin-left: 3%; 
-  font-family: Roboto; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 500; 
-  color: #FFFFFFFF; /* white */
-  background: #0D59F2FF; /* primary-500 */
-  opacity: 1; 
-  border-radius: 6px; 
-  border-width: 0px; 
-  border-color: #FFFFFFFF; /* white */
-  border-style: solid; 
-  gap: 16px; 
+/* --- TABLET & DESKTOP: FULL CARD --- */
+@media (min-width: 769px) {
+  .container {
+    width: 350px; 
+    /* Changed height to auto to let padding work naturally */
+    height: auto; 
+    min-height: 360px;
+    border-radius: 16px;
+    flex-shrink: 1;
+    /* Added padding bottom to the container */
+    padding-bottom: 10px; 
+  }
+
+  .image {
+    height: 192px;
+    border-radius: 16px 16px 0px 0px;
+  }
+
+  .title {
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 23px;
+    margin: 15px 0 0 5%; /* Slight increase in left margin */
+    font-weight: 600;
+    color: rgb(248, 248, 248);
+    text-decoration: none;
+  }
+
+  .price {
+    display: block;
+    margin-top: 10px;
+    margin-left: 5%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #0D59F2;
+  }
+
+  .button {
+    display: flex;
+    width: 95%; /* Responsive width within card */
+    height: 44px; /* Slightly taller for better feel */
+    /* Padding added to button as requested */
+    padding: 20px 20px; 
+    align-items: center; 
+    justify-content: center;
+    margin: 20px auto 0 auto; /* Centered with top margin */
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FFFFFF;
+    background: #0D59F2;
+    border-radius: 8px;
+    border: none;
+    gap: 12px;
+    cursor: pointer;
+  }
 }
+
+/* Icons and Animations */
 .button .icon {
-  width: 16px; 
-  height: 16px; 
-  fill: #FFFFFFFF; /* white */
-}
-/* Hover */
-.button:hover {
-  color: #FFFFFFFF; /* white */
-  background: #0D59F2FF; /* primary-500 */
-}
-/* Pressed */
-.button:hover:active {
-  color: #FFFFFFFF; /* white */
-  background: #0D59F2FF; /* primary-500 */
-}
-/* Disabled */
-.button:disabled {
-  opacity: 0.4; 
+  width: 18px;
+  height: 18px;
 }
 
 .added {
-   background-color: #2ecc71 !important; 
-   animation: pop 0.25s ease;
+  background-color: #2ecc71 !important;
+  animation: pop 0.25s ease;
 }
 
 @keyframes pop {
@@ -102,10 +115,6 @@
 }
 
 @keyframes jump {
-  0% {
-    transform: translateY(0); /* Start position (bottom) */
-  }
-  100% {
-    transform: translateY(-10px); /* End position (upwards) */
-  }
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }

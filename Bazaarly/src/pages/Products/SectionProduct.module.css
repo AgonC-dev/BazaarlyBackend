@@ -2,6 +2,7 @@
 .container {
   display: flex;
   animation: slideUp 0.8s ease-out;
+  gap: 3em;
 }
 
 
@@ -235,6 +236,7 @@
 .productsCon {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;  
   flex-wrap: wrap;
   width: 80%;
@@ -244,6 +246,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 25px;
 }
 

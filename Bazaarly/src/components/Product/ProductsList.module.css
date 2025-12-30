@@ -1,35 +1,63 @@
 .productList {
-    display: flex;
-    gap: 50px;
-    border: none;
+  display: flex;
+  gap: 10px;
+  padding: 20px 5%;
+  margin: 0 auto;
+  border: none;
+  width: 100%;
+
+  /* MOBILE DEFAULT: Horizontal Scroll */
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hides scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.productList::-webkit-scrollbar {
+  display: none;
+}
+
+/* TABLETS & DESKTOPS */
+@media (min-width: 769px) {
+  .productList {
+    flex-wrap: wrap; 
     justify-content: center;
-    flex-wrap: wrap;
-    flex-shrink: 4;
-    margin: 0 auto;
+    overflow-x: visible;
+    padding: 40px 2%;
+    gap: 40px;
+  }
 }
 
 .loading {
-    color: white;
-    text-align: center;
-    padding: 1.5%;
-    margin: 0 auto;
-    width: 30%;
-    border-radius: 20px;
-    background-color: lightcoral;
-    font-family: Roboto; 
-    font-size: 25px; 
-    line-height: 23px; 
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 20px auto;
+  width: fit-content;
+  min-width: 200px;
+  border-radius: 12px;
+  background-color: #ff6b6b;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
 }
 
+/* FIXED ERROR MESSAGE */
 .errorMsg {
-    color: red;
-    text-align: center;
-       font-family: Roboto; 
-    font-size: 18px;
-    font-weight: 500; 
-    line-height: 23px; 
+  color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid #ff4d4d;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 20px auto;
+  max-width: 90%;
+  display: block;
 }
-
-
 
 

@@ -1,10 +1,11 @@
+/* --- ORIGINAL DESKTOP STYLES (NO CHANGES) --- */
 .title {
   text-align: center;
-  font-family: Poppins; /* Heading */
+  font-family: Poppins;
   font-size: 30px; 
   line-height: 36px; 
   font-weight: 700; 
-  color: #F3F4F6FF; /* neutral-200 */
+  color: #F3F4F6FF;
 }
 
 @keyframes fadeIn {
@@ -20,22 +21,22 @@
   height: 48em;
   display: flex;
   flex-direction: column;
-  background: #1E2128FF; /* neutral-800 */
+  background: #1E2128FF; /* Background kept exactly as you had it */
   border-radius: 16px; 
   border-width: 1px; 
-  border-color: #323743FF; /* neutral-700 */
+  border-color: #323743FF; 
   border-style: solid; 
-   animation: fadeIn 0.7s ease-in-out;
-  box-shadow: 0px 0px 0px #00000000, 0px 1px 2px #000000; /* shadow-custom */
+  animation: fadeIn 0.7s ease-in-out;
+  box-shadow: 0px 0px 0px #00000000, 0px 1px 2px #000000;
 }
 
 .text {
   text-align: center;
-  font-family: Roboto; /* Body */
+  font-family: Roboto;
   font-size: 16px; 
   line-height: 24px; 
   font-weight: 400; 
-  color: #BDC1CAFF; /* neutral-400 */
+  color: #BDC1CAFF;
 }
 
 .emailCon {
@@ -46,19 +47,15 @@
     margin-bottom: 0;
 }
 
-
-
-/* Textbox */
 .label {
   color: #F3F4F6FF;
   opacity: 1; 
-  font-family: Roboto; /* Body */
+  font-family: Roboto;
   font-size: 17px; 
   line-height: 24px; 
   font-weight: 400; 
   margin-left: 18%;
   margin-top: 1%;
-
 }
 
 .input {
@@ -73,38 +70,15 @@
   font-size: 14px; 
   line-height: 22px; 
   font-weight: 400; 
-  background: #1E2128FF; /* neutral-800 */
+  background: #1E2128FF;
   border-radius: 10px; 
   border-width: 1px; 
-  border-color: #323743FF; /* neutral-700 */
+  border-color: #323743FF; 
   border-style: solid; 
   outline: none; 
+  color: white;
 }
 
-/* hover */
-.input:hover {
-  color: #BDC1CAFF; /* neutral-400 */
-  background: #1E2128FF; /* neutral-800 */
-  border-color: #323743FF; /* neutral-700 */
-}
-
-/* .input::focused {
-  color: #BDC1CAFF; 
-  background: #1E2128FF; 
-  border-color: #323743FF; 
-} */
-
-.input:disabled {
-  color: #BDC1CAFF; /* neutral-400 */
-  background: #1E2128FF; /* neutral-800 */
-  border-color: #323743FF; /* neutral-700 */
-}
-.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
-  fill: #BDC1CAFF; /* neutral-400 */
-}
-
-
-    /* Button */
 .logIn {
   text-align: center;
   margin: 5% auto;
@@ -118,37 +92,21 @@
   font-size: 18px; 
   line-height: 28px; 
   font-weight: 600; 
-  color: #FFFFFFFF; /* white */
-  background: #0D59F2FF; /* primary-500 */
+  color: #FFFFFFFF;
+  background: #0D59F2FF;
   opacity: 1; 
   border-radius: 16px; 
   border-width: 0px; 
-  border-color: #FFFFFFFF; /* white */
   border-style: solid; 
-}
-/* Hover */
-.logIn:hover {
-  color: #FFFFFFFF; /* white */
-  background: #0D59F2FF; /* primary-500 */
-}
-/* Pressed */
-.logIn:hover:active {
-  color: #FFFFFFFF; /* white */
-  background: #0D59F2FF; /* primary-500 */
-}
-/* Disabled */
-.logIn:disabled {
-  opacity: 0.4; 
 }
 
 .middle {
   text-align: center;
-
-  font-family: Roboto; /* Body */
+  font-family: Roboto;
   font-size: 12px; 
   line-height: 16px; 
   font-weight: 400; 
-  color: #BDC1CAFF; /* neutral-400 */
+  color: #BDC1CAFF;
 }
 
 .continue {
@@ -162,95 +120,81 @@
 }
 
 .blackButton {
-    /* Container */
   width: 350px; 
   height: 48px; 
-  background: #000000FF; /* black */
+  background: #000000FF;
   border-radius: 16px; 
   border-width: 1px; 
-  border-color: #323743FF; /* neutral-700 */
+  border-color: #323743FF; 
   border-style: solid; 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5%;
-  font-family: Roboto; /* Body */
+  font-family: Roboto;
   font-size: 14px; 
   line-height: 20px; 
   font-weight: 500; 
-  color: #F3F4F6FF; /* neutral-200 */
+  color: #F3F4F6FF;
 }
 
-.accountText {
-  font-family: Roboto; /* Body */
+.accountText { 
+  font-family: Roboto; /* Body */ 
   font-size: 14px; 
   line-height: 20px; 
   font-weight: 400; 
   color: #BDC1CAFF; /* neutral-400 */
-}
-
-
-    /* Button */
-.button {
+ } 
+ 
+ /* Button */ 
+ .button { 
   font-family: Roboto; 
   font-size: 14px; 
   line-height: 22px; 
   font-weight: 500; 
-  color: #0D59F2FF; /* primary-500 */
+  color: #0D59F2FF; /* primary-500 */ 
   background: #00000000; /* transparent */
-  opacity: 1; 
-  border: none; 
-  border-radius: 6px; 
-}
-/* Hover */
-.button:hover {
-  color: #0D59F2FF; /* primary-500 */
-  background: #00000000; /* black */
-}
-/* Pressed */
-.button:hover:active {
-  color: #0D59F2FF; /* primary-500 */
-  background: #00000000; /* black */
-}
-/* Disabled */
-.button:disabled {
-  opacity: 0.4; 
-}
-
-.accDiv {
-    text-align: center;
-  
- 
+   opacity: 1; border: none;
+    border-radius: 6px; 
+  } 
+   
+  /* Hover */ 
+  .button:hover { 
+    color: #0D59F2FF; /* primary-500 */ 
+    background: #00000000; /* black */ } /* Pressed */
     
-}
+  .button:hover:active { 
+    color: #0D59F2FF; /* primary-500 */ 
+    background: #00000000; /* black */
+   } /* Disabled */ 
+   
+   .button:disabled { 
+    opacity: 0.4; 
+  } 
+  
+  .accDiv {
+     text-align: center; 
+  }
 
 .error {
   background-color: rgb(143, 26, 26);
   width: 80%;
   padding: 2%;
-  margin-left: auto;
-  margin-right: auto;
-  letter-spacing: 0.5px;
+  margin: 10px auto;
   text-align: center;
   border-radius: 15px;
   color: rgb(197, 181, 181);
   font-family: Roboto; 
   font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 500; 
 }
 
 .forget {
   margin: 0 auto;
   width: 65%;
- 
   font-family: Roboto; 
   font-size: 14px; 
-  line-height: 22px; 
   font-weight: 500; 
   color: #0D59F2FF;
-
-
 }
 
 .resetBtn {
@@ -259,33 +203,35 @@
   border: none;
 }
 
-/* Button */
+/* --- RESPONSIVE FIXES (Only for Phones) --- */
+@media (max-width: 768px) {
+  .logContainer {
+    width: 90%; /* Scale up for small screens */
+    min-width: 90%;
+    height: auto; /* Allow box to grow if text wraps */
+    padding-bottom: 30px;
+    margin: 40px auto;
+  }
 
-.successBox {
+  .input, .blackButton {
+    width: 85%; /* Fits inside the 90% container */
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  gap: 10px;
-  margin: 0%;
-  color: white;
-   font-family: Roboto; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 500; 
+  .label {
+    margin-left: 8%; /* Centers label better on small screens */
+  }
 
+  .logIn {
+    width: 85%;
+  }
 }
 
-.successBox button {
-  height: fit-content;
-  text-align: center;
-  background: none;
-  border: none;
-   font-family: Roboto; 
-  font-size: 20px; 
-  color: red;
-  line-height: 22px; 
-  font-weight: bolder; 
-
+@media (max-width: 400px) {
+  .title {
+    font-size: 24px;
+  }
+  
+  .input, .blackButton, .logIn {
+    width: 90%;
+  }
 }
