@@ -108,11 +108,11 @@
   border-color: #323743FF; /* neutral-700 */
 }
 /* focused */
-.input:focused {
-  color: #BDC1CAFF; /* neutral-400 */
-  background: #000000FF; /* black */
-  border-color: #323743FF; /* neutral-700 */
-}
+/* .input:focused {
+  color: #BDC1CAFF; 
+  background: #000000FF;
+  border-color: #323743FF;
+} */
 /* disabled */
 .input:disabled {
   color: white; /* neutral-400 */
