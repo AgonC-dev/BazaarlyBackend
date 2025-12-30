@@ -1,3 +1,5 @@
+import { act } from "react";
+
 export const initialCartState = [];
 
 
@@ -50,6 +52,10 @@ export function CartReducer(state, action) {
 
    if(action.type === "SET_CART") {
      return  action.payload || []
+   }
+  
+   if(action.type === "CLEAR_CART") {
+    return [];
    }
 
     return state

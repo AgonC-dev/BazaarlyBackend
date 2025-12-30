@@ -9,7 +9,7 @@ import Modal from '../../components/Modal';
 
 
 export default function Cart() {
-  const { cart } = useContext(CartContext);
+  const { cart, dispatch } = useContext(CartContext);
   const [ isCheckOutOpen, setIsCheckOutOpen] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [isSuccess, setIsSuccess] = useState(false);
@@ -30,18 +30,20 @@ export default function Cart() {
   setIsCheckOutOpen(false);
  }
 
- function handleCompletePurchase() {
-  // 1. Trigger success state
-  setIsSuccess(true);
+   function handleCompletePurchase() {
   
-  // 2. Wait 2 seconds, then close the modal and reset
-  setTimeout(() => {
-    handleCloseCheckOut(); 
-    // Reset success state after modal closes so it's ready for next time
-    setTimeout(() => setIsSuccess(false), 500);
+    setIsSuccess(true);
+  
+     setTimeout(() => {
+   
+     handleCloseCheckOut(); 
+
+     setTimeout(() => {
+       dispatch({ type: 'CLEAR_CART' });
+       setIsSuccess(false); // Reset for next time
+    }, 500); 
   }, 2200);
 }
-
      const TAX_RATE = 0.15;
      const SHIPPING_FEE = 7.5;
 

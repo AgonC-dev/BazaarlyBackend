@@ -25,6 +25,11 @@ export default function SectionProduct() {
     queryFn: fetchProducts,
   });
 
+  const triggerError = (msg) => {
+    setLogInError(msg);
+    setTimeout(() => setLogInError(''), 3000);
+  };
+
  
 
   useEffect(() => {
@@ -38,14 +43,14 @@ export default function SectionProduct() {
    
   }, [location.state])
 
-  useEffect(() => {
-    const userId = auth.currentUser?.uid;
-    if (!userId) {
-      setLogInError('Please Log In to add items to your cart');
-    }
-    const timer = setTimeout(() => setLogInError(''), 3000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   const userId = auth.currentUser?.uid;
+  //   if (!userId) {
+  //     setLogInError('Please Log In to add items to your cart');
+  //   }
+  //   const timer = setTimeout(() => setLogInError(''), 3000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   if (isLoading) return <p className={styles.loading}>Loading...</p>;
   if (isError) return <p className={styles.loading}>Failed to fetch products...</p>;
@@ -146,7 +151,7 @@ export default function SectionProduct() {
                 <Product 
                   key={product.id} 
                   className={styles.productItem}
-                  onError={LogInError}
+                  onError={() => triggerError("Please log in to add items to your cart")}
                   {...product} 
                 />
               ))

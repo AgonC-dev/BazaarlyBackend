@@ -12,6 +12,7 @@ import Footer from "../../components/Footer/Footer";
 export default function ProductDetail() {
   const { productId } = useParams();
   const [quantity, setQuantity] = useState(1);
+  const [ errors, setErrors] = useState(''); 
   const [ activeSection, setActiveSection ] = useState(null);
   const [ selectedSize, setSelectedSize] = useState(undefined); 
   const [ added, setAdded ] = useState(false);
@@ -48,12 +49,14 @@ export default function ProductDetail() {
   async function handleAddToCart() {
   const userId = auth.currentUser?.uid;
   if (!userId) {
-    alert("Please log in!");
+    setErrors('Please Log In First')
+    setTimeout(() => setErrors(''), 1100);
     return;
   }
 
   if(needsSize && !selectedSize) {
-    alert('Please select a size');
+    setErrors('Please select a size first')
+    setTimeout(() => setErrors(''), 1100);
     return;
   }
 
@@ -117,7 +120,7 @@ export default function ProductDetail() {
         <p className={styles.description}>{data.description}</p>
         
         <div className={styles.options}>
-        {needsSize ? (
+        {needsSize  ? (
          <div className={styles.sizeSection}>
            <p className={styles.label}>Select Size</p>
          <div className={styles.sizeGrid}>
@@ -140,10 +143,11 @@ export default function ProductDetail() {
               <button onClick={() => setQuantity(q => q + 1)}>+</button>
             </div>
             <button 
-              className={`${styles.addToCartBtn} ${added ? styles.added : ''}`} 
+              className={`${styles.addToCartBtn} ${added ? styles.added : ''} ${errors ? styles.btnError : ''}`} 
               onClick={handleAddToCart}
+              disabled={added}
             >
-              {added ? 'Added ✓' : "Add to Cart"}
+              {errors ? errors : (added ? 'Added ✓' : "Add to Cart")}
             </button>
           </div>
         </div>

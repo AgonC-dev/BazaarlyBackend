@@ -190,6 +190,20 @@ html {
   cursor: pointer;
 }
 
+.btnError {
+  background-color: #dc3545 !important; /* Red color */
+  color: white;
+  font-size: 15px;
+  animation: shake 0.2s ease-in-out 0s 2; /* Attention grabber */
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
 .added {
    background-color: #2ecc71 !important; 
    animation: pop 0.25s ease;

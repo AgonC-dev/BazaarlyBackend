@@ -1,4 +1,13 @@
 // backend/server.js
+const result = require('dotenv').config();
+
+if (result.error) {
+  console.error("❌ Dotenv Error:", result.error);
+} else {
+  console.log("✅ Variables Loaded:", Object.keys(result.parsed || {}));
+}
+
+console.log("Checking specific key:", process.env.FIREBASE_SERVICE_ACCOUNT ? "FOUND" : "NOT FOUND");
 const express = require('express');
 const cors = require('cors');
 const { fetchProducts, fetchProductById } = require('./fetchProducts.js');
@@ -34,5 +43,7 @@ app.get('/products/:id', async (req, res) => {
   }
 });
 
-const PORT = 3000 ;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+});
