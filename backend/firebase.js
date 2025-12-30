@@ -1,10 +1,15 @@
+// backend/firebase.js
 const admin = require('firebase-admin');
 
-try {
-  const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+let serviceAccount;
 
-  // This is the "magic" line that fixes the hang
-  if (serviceAccount.private_key && !serviceAccount.private_key.includes('\n')) {
+try {
+  const rawData = process.env.FIREBASE_SERVICE_ACCOUNT;
+  
+  // If it's already an object, use it. If it's a string, parse it.
+  serviceAccount = typeof rawData === 'string' ? JSON.parse(rawData) : rawData;
+
+  if (serviceAccount && serviceAccount.private_key) {
     serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
   }
 
@@ -12,10 +17,10 @@ try {
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });
+    console.log("✅ Firebase connection established");
   }
-  console.log("✅ Firebase Admin Initialized");
 } catch (error) {
-  console.error("❌ Firebase Init Error:", error);
+  console.error("❌ Firebase Error:", error.message);
 }
 
 const db = admin.firestore();

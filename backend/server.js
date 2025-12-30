@@ -32,14 +32,8 @@ app.get('/', (req, res) => {
 });
 
 // 2. Endpoint to fetch all products
-app.get('/products', async (req, res) => {
-  try {
-    const products = await fetchProducts();
-    res.json(products);
-  } catch (err) {
-    console.error("Error in /products route:", err);
-    res.status(500).send('Error fetching products');
-  }
+app.get('/products', (req, res) => {
+  res.json([{ name: "Test Product", price: 10 }]);
 });
 
 // 3. Endpoint to fetch a single product by ID
