@@ -1,15 +1,18 @@
 // backend/firebase.js
 const admin = require('firebase-admin');
 
-let serviceAccount;
-
 try {
   const rawData = process.env.FIREBASE_SERVICE_ACCOUNT;
   
-  // If it's already an object, use it. If it's a string, parse it.
-  serviceAccount = typeof rawData === 'string' ? JSON.parse(rawData) : rawData;
+  if (!rawData) {
+    throw new Error("FIREBASE_SERVICE_ACCOUNT is missing!");
+  }
 
-  if (serviceAccount && serviceAccount.private_key) {
+  // Parse the string into an object
+  let serviceAccount = typeof rawData === 'string' ? JSON.parse(rawData) : rawData;
+
+  // This part is the most important:
+  if (serviceAccount.private_key) {
     serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
   }
 
@@ -17,10 +20,10 @@ try {
     admin.initializeApp({
       credential: admin.credential.cert(serviceAccount),
     });
-    console.log("✅ Firebase connection established");
+    console.log("✅ Connected to Firebase Project:", serviceAccount.project_id);
   }
 } catch (error) {
-  console.error("❌ Firebase Error:", error.message);
+  console.error("❌ Firebase Setup Error:", error.message);
 }
 
 const db = admin.firestore();
