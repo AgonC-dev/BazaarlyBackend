@@ -1,96 +1,80 @@
+/* Rectangle */
 .background {
-  width: 100%;
-  /* Mobile height is smaller */
-  height: 450px; 
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../assets/bg5.jpg');
-  background-size: cover;
-  background-position: center;
+ width: 100%;
+max-width: 1920px;
+  height: 600px; 
+  background: #00000080; /* black */
+  border-radius: 0px 0px 0px 0px; 
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
-  /* Space between header and the products below */
-  margin-bottom: 20px; 
+  background-image: url('../../assets/bg5.jpg');
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  text-align: center;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* MOBILE STYLES (Default) */
 .title {
-  color: #F3F4F6;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  line-height: 1.2;
-  /* Smaller for phones */
-  font-size: 32px; 
-  max-width: 100%;
-  margin-bottom: 16px;
+
+  text-align: center;
+  width: 832px; 
+  font-family: Poppins; /* Heading */
+  font-size: 60px; 
+  margin-bottom: 2%;
+  line-height: 75px; 
+  font-weight: 800; 
+  color: #F3F4F6FF; /* neutral-200 */
 }
 
 .description {
-  color: #BDC1CA;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  line-height: 1.4;
-  /* Smaller for phones */
-  font-size: 15px; 
-  max-width: 95%;
-  margin-bottom: 24px;
+  text-align: center;
+  margin-top: 0;
+  width: 672px; 
+  font-family: Poppins; /* Heading */
+  font-size: 20px; 
+  line-height: 28px; 
+  font-weight: 400; 
+  color: #BDC1CAFF; /* neutral-400 */
 }
 
+/* Button */
 .button {
-  min-width: 180px;
-  height: 48px;
-  padding: 0 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #FFFFFF;
-  background: #0D59F2;
-  border-radius: 10px;
+  width: 185.34375px; 
+  height: 44px; 
+  padding: 0 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-family: Roboto; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 500; 
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+  opacity: 1; 
+  border-radius: 10px; 
   text-decoration: none;
-  transition: all 0.2s ease;
+  border-width: 0px; 
+  border-color: #FFFFFFFF; /* white */
+  border-style: solid; 
+  box-shadow: 0px 0px 0px #00000000, 
+  0px 1px 2px #000000; /* shadow-custom */
 }
-
-/* TABLET & DESKTOP (The "Expansion") */
-@media (min-width: 769px) {
-  .background {
-    height: 600px;
-    margin-bottom: 40px;
-  }
-
-  .title {
-    font-size: 60px;
-    max-width: 850px;
-    margin-bottom: 24px;
-  }
-
-  .description {
-    font-size: 20px;
-    line-height: 1.6;
-    max-width: 700px;
-    margin-bottom: 32px;
-  }
-
-  .button:hover {
-    background: #0b4ecd;
-    transform: translateY(-3px);
-    box-shadow: 0px 8px 15px rgba(13, 89, 242, 0.3);
-  }
+/* Hover */
+.button:hover {
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
 }
-
-/* LARGE DESKTOPS */
-@media (min-width: 1400px) {
-  .title {
-    font-size: 72px; /* Extra impact for big screens */
-  }
+/* Pressed */
+.button:hover:active {
+  color: #FFFFFFFF; /* white */
+  background: #0D59F2FF; /* primary-500 */
+}
+/* Disabled */
+.button:disabled {
+  opacity: 0.4; 
 }
