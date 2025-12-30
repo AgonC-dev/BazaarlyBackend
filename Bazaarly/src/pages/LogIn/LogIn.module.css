@@ -87,13 +87,13 @@
   background: #1E2128FF; /* neutral-800 */
   border-color: #323743FF; /* neutral-700 */
 }
-/* focused */
-.input:focused {
-  color: #BDC1CAFF; /* neutral-400 */
-  background: #1E2128FF; /* neutral-800 */
-  border-color: #323743FF; /* neutral-700 */
-}
-/* disabled */
+
+/* .input::focused {
+  color: #BDC1CAFF; 
+  background: #1E2128FF; 
+  border-color: #323743FF; 
+} */
+
 .input:disabled {
   color: #BDC1CAFF; /* neutral-400 */
   background: #1E2128FF; /* neutral-800 */
