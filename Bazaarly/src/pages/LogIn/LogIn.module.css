@@ -204,34 +204,80 @@
 }
 
 /* --- RESPONSIVE FIXES (Only for Phones) --- */
+/* --- RESPONSIVE FIXES (Only for Phones) --- */
 @media (max-width: 768px) {
-  .logContainer {
-    width: 90%; /* Scale up for small screens */
-    min-width: 90%;
-    height: auto; /* Allow box to grow if text wraps */
-    padding-bottom: 30px;
-    margin: 40px auto;
-  }
+    .logContainer {
+        width: 92%;         /* Scale container to phone width */
+        min-width: 92%;
+        height: auto;       /* Let it grow with content */
+        padding: 30px 15px; /* Add internal spacing so things aren't tight */
+        margin: 20px auto;
+    }
 
-  .input, .blackButton {
-    width: 85%; /* Fits inside the 90% container */
-  }
+    .title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
 
-  .label {
-    margin-left: 8%; /* Centers label better on small screens */
-  }
+    .text {
+        margin-bottom: 25px; /* Space out the sub-text */
+    }
 
-  .logIn {
-    width: 85%;
-  }
+    .emailCon {
+        margin-bottom: 15px; /* Space between the email and password blocks */
+    }
+
+    .label {
+        margin-left: 5%;    /* Reduce that huge 18% margin for phones */
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+
+    .input {
+        width: 90% !important; /* Force input to fit phone width */
+        height: 50px;          /* Slightly taller for easier tapping */
+        margin: 0 auto 10px auto;
+    }
+
+    .logIn {
+        width: 90% !important;
+        margin: 20px auto;     /* Add spacing around the main button */
+        border-radius: 12px;
+    }
+
+    .middle {
+        margin: 20px 0;        /* Space out the "OR CONTINUE WITH" text */
+    }
+
+    .continue {
+        gap: 12px;             /* Space between Google and Facebook buttons */
+        margin: 10px auto;
+    }
+
+    .blackButton {
+        width: 90% !important; /* Force social buttons to fit */
+        height: 50px;
+    }
+
+    .forget {
+        width: 90%;
+        text-align: left;
+        margin-left: 5%;      /* Align with the label and input */
+    }
+
+    .accDiv {
+        margin-top: 25px;      /* Spacing before the "Sign Up" footer */
+        padding-bottom: 10px;
+    }
 }
 
+/* Fix for very small phones */
 @media (max-width: 400px) {
-  .title {
-    font-size: 24px;
-  }
-  
-  .input, .blackButton, .logIn {
-    width: 90%;
-  }
+    .title {
+        font-size: 22px;
+    }
+    
+    .logContainer {
+        padding: 20px 10px;
+    }
 }
