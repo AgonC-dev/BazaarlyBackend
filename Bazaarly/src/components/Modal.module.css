@@ -3,12 +3,39 @@
     border: none;
     background-color: transparent;
     outline: none;
-    /* Remove fixed/width/height - let the dialog manage its position */
-    margin: auto; 
+    margin: auto; /* Browser's native centering */
     z-index: 9999;
+
+    /* RESPONSIVE LOGIC */
+    width: calc(100% - 2rem); /* 90-95% width on small screens */
+    max-width: 550px;         /* Becomes a fixed width on large screens */
+    
+    /* SCROLLING LOGIC */
+    max-height: 85vh;         /* Prevents it from being taller than the phone screen */
+    overflow-y: auto;      
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;   /* If the form is long, it scrolls inside the modal */
+    
+    /* SMOOTHNESS */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .modal::backdrop {
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+/* Optional: Make it feel like an app on mobile */
+@media (max-width: 480px) {
+    .modal {
+        width: calc(100% - 1rem); /* Even smaller side margins on tiny phones */
+        max-height: 90vh;
+    }
 }
