@@ -1,4 +1,4 @@
-import { NavLink, Link,  useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import styles from './Navigation.module.css'
 import searchIcon from '../../assets/SearchBar.svg';
 import CartIcon from '../../assets/Cart.svg';
@@ -36,11 +36,6 @@ useEffect(() => {
   } 
 }, [])
 
-
-  
-  
-
-
 const handleProfileClick = (e) => {
  e.stopPropagation();
 
@@ -51,92 +46,133 @@ const handleProfileClick = (e) => {
   }
 }
 
-
-
 const handleLogout = async () => {
   await signOut(auth);
   setShowDropdown(false);
   navigate('/')
 }
 
-
-
  return (
-    <div className={styles.container}>
-      <div className={styles.left}>
-        <Link to='/'><img src={logo} className={styles.logo} alt='Logo'/></Link>
-        <ul className={styles.list}> 
-          <li>
-           <NavLink
-             to="/"
-            className={({ isActive }) =>
-            `${styles.navButton} ${isActive ? styles.active : ''}`
-             }
-            >
-               Home
-            </NavLink>
-         </li>
-         <li>
+    <>
+      <div className={styles.container}>
+        <div className={styles.left}>
+          <Link to='/'><img src={logo} className={styles.logo} alt='Logo'/></Link>
+          <ul className={styles.list}> 
+            <li>
             <NavLink
-              to="/products"
+              to="/"
               className={({ isActive }) =>
-             `${styles.navButton} ${isActive ? styles.active : ''}`
+              `${styles.navButton} ${isActive ? styles.active : ''}`
               }
-            >
-               Products
-            </NavLink>
-         </li>
-         <li>
-           <NavLink
-             to="/about"
-             className={({ isActive }) =>
-             `${styles.navButton} ${isActive ? styles.active : ''}`
-              }
-            >
-              About
-           </NavLink>
-         </li>
-         <li>
-           <NavLink
-             to="/contact"
-             className={({ isActive }) =>
-             `${styles.navButton} ${isActive ? styles.active : ''}`
-             }
-            >
-               Contact
-            </NavLink>
-         </li>   
-        </ul>
-      </div>
-      <div className={styles.right}>
-        <button className={styles.search}>
-          <img src={searchIcon} />
-        </button>
-        <button className={styles.search}>
-          <Link to='cart'><img src={CartIcon} /></Link>
-          <p className={styles.cartItemNum}>
-             {cartItemNum > 0 && `(${cartItemNum})`}
-          </p>
-        </button>
-        <div className={styles.profileWrapper}>
-          <button className={`${styles.avatar} ${user ? styles.loggedIn : ''}`} onClick={handleProfileClick}>
-            <img src={Profile} />
+              >
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/products"
+                className={({ isActive }) =>
+                `${styles.navButton} ${isActive ? styles.active : ''}`
+                }
+              >
+                Products
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                `${styles.navButton} ${isActive ? styles.active : ''}`
+                }
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                `${styles.navButton} ${isActive ? styles.active : ''}`
+                }
+              >
+                Contact
+              </NavLink>
+            </li>   
+          </ul>
+        </div>
+        <div className={styles.right}>
+          <button className={styles.search}>
+            <img src={searchIcon} />
           </button>
-          {user && showDropdown && (
-            <div className={styles.dropdown}>
-              
-              <div className={styles.userInfo}>
-                <p>{user.email}</p>
+          <button className={styles.search}>
+            <Link to='cart'><img src={CartIcon} /></Link>
+            <p className={styles.cartItemNum}>
+              {cartItemNum > 0 && `(${cartItemNum})`}
+            </p>
+          </button>
+          <div className={styles.profileWrapper}>
+            <button className={`${styles.avatar} ${user ? styles.loggedIn : ''}`} onClick={handleProfileClick}>
+              <img src={Profile} />
+            </button>
+            {user && showDropdown && (
+              <div className={styles.dropdown}>
+                <div className={styles.userInfo}>
+                  <p>{user.email}</p>
+                </div>
+                <hr className={styles.break}/>
+                <Link to="/profile" onClick={() => setShowDropdown(false)} className={styles.profileClick}>View Profile</Link>
+                <button onClick={handleLogout} className={styles.logoutBtn}>
+                  Logout
+                </button>
               </div>
-              <hr className={styles.break}/>
-              <Link to="/profile" onClick={() => setShowDropdown(false)} className={styles.profileClick}>View Profile</Link>
-              <button onClick={handleLogout} className={styles.logoutBtn}>
-                Logout
-              </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Mobile Bottom Navigation - Only appears on mobile */}
+      <ul className={styles.mobileBottomNav}>
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${styles.navButton} ${isActive ? styles.active : ''}`
+            }
+          >
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              `${styles.navButton} ${isActive ? styles.active : ''}`
+            }
+          >
+            Products
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${styles.navButton} ${isActive ? styles.active : ''}`
+            }
+          >
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `${styles.navButton} ${isActive ? styles.active : ''}`
+            }
+          >
+            Contact
+          </NavLink>
+        </li>
+      </ul>
+    </>
  )
 }

@@ -258,3 +258,63 @@
   opacity: 0.4; 
 }
 
+/* --- PHONE RESPONSIVENESS FOR CART ITEM --- */
+@media (max-width: 768px) {
+  .container {
+    width: 95%; /* Use percentage instead of fixed em */
+    height: auto; /* Allow height to grow with stacked content */
+    flex-direction: column; 
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .left {
+    flex-direction: row; /* Keep image and title side-by-side or stack */
+    align-items: center;
+    gap: 15px;
+    padding: 0;
+  }
+
+  .image {
+    width: 80px; /* Smaller image for mobile */
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .priceCon {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #323743;
+    padding-top: 10px;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .quantityCon {
+    flex-direction: row; /* Row for quantity on mobile */
+    gap: 10px;
+  }
+
+  .price {
+    display: none; /* Hide individual price if it crowds the layout */
+  }
+
+  .delete {
+    width: auto;
+    gap: 10px;
+  }
+
+  .delete p {
+    font-size: 16px;
+  }
+
+  .textbox input {
+    width: 3em; /* Slightly smaller input */
+  }
+}

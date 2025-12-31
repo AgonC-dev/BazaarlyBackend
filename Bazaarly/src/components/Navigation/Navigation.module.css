@@ -190,6 +190,10 @@ html, body {
     padding: 8px 10px;
 }
 
+.mobileBottomNav {
+  display: none;
+}
+
 /* --- MOBILE OVERRIDES (PHONES ONLY) --- */
 @media (max-width: 768px) {
     .container {
