@@ -186,69 +186,68 @@ html, body {
     padding: 8px 10px;
 }
 
-/* --- PHONE FIXES ONLY --- */
+/* --- PREMIUM MOBILE OVERRIDES (PHONES ONLY) --- */
 @media (max-width: 768px) {
     .container {
         position: fixed;
         top: 0;
         left: 0;
-        height: 60px;
-        background-color: #000000;
-        padding: 0 15px;
+        height: 65px;
+        padding: 0 10px;
         display: flex;
-        justify-content: space-between;
-        z-index: 1001;
+        justify-content: center; /* Center logo by default */
+        background: #000;
+        z-index: 2000;
     }
 
-    /* Force left and right to share space so icons aren't pushed off */
     .left {
-        flex: 1 !important;
-        justify-content: flex-start !important;
+        position: absolute;
+        left: 10px;
     }
     
     .left .logo {
-        width: 100px;
+        width: 90px;
         height: auto;
     }
 
-    /* FIX: This makes the Cart and Profile visible on the top right */
+    /* THE CART FIX: Move right section to the absolute right side */
     .right {
-        flex: 1 !important;
-        width: auto !important; 
+        position: absolute;
+        right: 15px;
+        width: auto !important;
         display: flex !important;
-        flex-direction: row !important;
-        gap: 15px !important; 
-        justify-content: flex-end !important;
+        gap: 20px; /* Space between cart and profile */
+        height: 100%;
     }
 
-    .search {
-        display: none; 
+    /* Make the Cart text/number visible on black background */
+    .cartItemNum {
+        color: #0d59f2; /* Make it blue so you can see it */
+        font-weight: 700;
+        font-size: 16px;
     }
 
-    /* PREMIUM BOTTOM NAV */
+    .search { display: none; }
+
+    /* PREMIUM BOTTOM NAV WITH DIVIDERS */
     .list {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 65px;
+        height: 70px;
         background: #0a0a0a;
         border-top: 1px solid #323743;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0;
-        z-index: 1000;
+        z-index: 2000;
     }
 
-    /* Premium Vertical Dividers */
-    .list > li, .list > a, .list > div {
+    .list > * {
         flex: 1;
         height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .list > *:last-child {
@@ -256,21 +255,21 @@ html, body {
     }
 
     .navButton {
-        font-size: 13px;
+        font-size: 12px;
         font-weight: 600;
-        color: #FFFFFF;
+        color: #fff;
+        padding: 0;
     }
 
     .active {
         background: transparent;
         color: #0d59f2 !important;
         border-bottom: 3px solid #0d59f2;
-        border-radius: 0;
     }
 
-    /* Space for content */
+    /* Body padding to prevent overlap */
     :global(body) {
-        padding-top: 65px;
-        padding-bottom: 70px;
+        padding-top: 70px !important;
+        padding-bottom: 80px !important;
     }
 }
