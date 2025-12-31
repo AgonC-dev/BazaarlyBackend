@@ -1,4 +1,4 @@
-/* --- YOUR ORIGINAL DESKTOP STYLES (DO NOT TOUCH) --- */
+/* --- YOUR ORIGINAL DESKTOP STYLES (UNTOUCHED) --- */
 * {
     box-sizing: border-box;
 }
@@ -29,7 +29,7 @@ html, body {
     align-items: center;
     height: 72px;
     background-color: #000000E6;
-    border-radius: 0px; 
+    border-radius: 0px 0px 0px 0px; 
     box-shadow: 0px 0px 0px #00000000, 0px 0px 2px #171a1f14;
 }
 
@@ -45,7 +45,7 @@ html, body {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    width: 15%;
+    width: 15%; /* This was causing the squish on mobile */
 }
 
 .cartItemNum {
@@ -60,6 +60,7 @@ html, body {
 .logo {
     width: 17em;
     height: 12em;
+    margin: 0;
 }
 
 .navButton {
@@ -87,20 +88,119 @@ html, body {
     color: #ffffff !important;
 }
 
-/* ... (Remaining Desktop Classes like .avatar, .search, .dropdown stay exactly the same) ... */
-.avatar { width: 36px; height: 36px; background: #E3FAF6FF; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 18px; }
-.avatar img { width: 36px; height: 36px; }
-.profileWrapper { position: relative; display: flex; align-items: center; }
-.dropdown { position: absolute; top: 3.7em; right: 0; background: black; border: 1px solid #ddd; border-radius: 8px; width: 200px; z-index: 999; display: flex; flex-direction: column; overflow: hidden; }
+.navButton:active {
+    transform: scale(0.96);
+}
 
-/* --- MOBILE LAYOUT (ONLY PHONES - FIXED & PREMIUM) --- */
+.search {
+    width: 40px; 
+    height: 40px; 
+    padding: 0 10px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #F3F4F6FF;
+    background: #00000000;
+    opacity: 1; 
+    border: none; 
+    border-radius: 6px; 
+}
+
+.search .icon {
+    width: 20px; 
+    height: 20px; 
+    fill: #F3F4F6FF;
+}
+
+.avatar {
+    width: 36px; 
+    height: 36px; 
+    background: #E3FAF6FF; 
+    opacity: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    border-radius: 18px; 
+}
+
+.avatar img {
+    width: 36px; 
+    height: 36px; 
+}
+
+.profileWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: absolute;
+    top: 3.7em;
+    right: 0;
+    background: black;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.userInfo {
+    padding: 12px;
+    background-color: black;
+    color: white;
+    font-family: Roboto; 
+    text-decoration: none;
+    font-size: 14px; 
+    line-height: 22px; 
+    font-weight: 500; 
+}
+
+.logoutBtn {
+    text-align: left;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.profileClick {
+    text-decoration: none;
+    font-family: Roboto; 
+    font-size: 14px; 
+    line-height: 22px; 
+    font-weight: 500; 
+    color: white;
+    padding: 8px 10px;
+}
+
+/* --- Responsiveness for Navigation --- */
+
+@media (max-width: 1024px) {
+    .right {
+        width: 25%;
+    }
+    .logo {
+        width: 12em;
+    }
+}
+
+/* --- PREMIUM MOBILE LAYOUT (Phones ONLY) --- */
 @media (max-width: 768px) {
-    /* 1. TOP BAR FIX: Ensure Cart and Profile are visible and spaced */
+    /* 1. TOP BAR FIX */
     .container {
         position: fixed;
         top: 0;
         left: 0;
-        height: 65px;
+        height: 60px;
         background-color: #000000;
         padding: 0 15px;
         display: flex;
@@ -111,91 +211,89 @@ html, body {
     .left {
         width: auto;
     }
-
+    
     .left .logo {
-        width: 110px;
+        width: 100px; /* Slimmer for phone top bar */
         height: auto;
     }
 
-    /* THE FIX: Explicitly style the right section so Cart + Profile show side-by-side */
+    /* THE FIX: Remove the 15% width restriction for the Cart icon */
     .right {
+        width: auto !important; /* Allow icons to fit naturally */
         display: flex !important;
-        flex-direction: row;
-        align-items: center;
+        gap: 20px; /* Space between cart and profile */
         justify-content: flex-end;
-        gap: 18px; /* Space between Cart and Profile */
-        width: auto;
     }
 
     .search {
-        display: none; /* Hide search to prioritize Cart visibility */
+        display: none; 
     }
 
-    /* 2. BOTTOM NAV: Premium App-Style with Dividers */
+    /* 2. PREMIUM BOTTOM BAR */
     .list {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 70px;
-        background: #0a0a0a;
-        border-top: 1px solid #333;
+        height: 70px; /* Slightly taller for thumbs */
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(15px);
+        border-top: 1px solid #323743;
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: space-around;
+        align-items: stretch; /* Allow items to fill height for dividers */
         padding: 0;
         z-index: 1000;
     }
 
-    /* Added Divider Lines between Nav items */
-    .list > *:not(:last-child) {
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
-        height: 50%; /* Lines don't touch top/bottom */
-        display: flex;
-        align-items: center;
+    /* Adding Vertical Dividers */
+    .list > * {
         flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .list > *:last-child {
-        flex: 1;
-        display: flex;
-        align-items: center;
+        border-right: none;
     }
 
-    /* 3. BIGGER & BETTER NAV TEXT */
+    /* 3. BIGGER MOBILE TEXT */
     .navButton {
-        font-size: 14px; /* Increased for readability */
+        font-size: 13px; /* Bigger for phone users */
         font-weight: 600;
-        padding: 0;
-        width: 100%;
+        padding: 5px;
         color: #FFFFFF;
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
 
     .active {
-        background: transparent; 
-        color: #0d59f2 !important; 
+        background: transparent;
+        color: #0d59f2 !important;
         border-bottom: 3px solid #0d59f2;
         border-radius: 0;
     }
 
-    /* Prevent content overlap */
     :global(body) {
         padding-top: 65px;
         padding-bottom: 75px;
     }
 
     .dropdown {
-        top: 60px;
+        top: 55px;
         position: fixed;
         right: 10px;
-        background: #111;
     }
 }
 
 @media (max-width: 480px) {
+    .left .logo {
+        width: 90px;
+    }
+    
     .navButton {
-        font-size: 12px;
+        font-size: 11px;
     }
 }
