@@ -20,6 +20,11 @@
   display: none;
 }
 
+.headTitle {
+  font-size: 28px;
+  text-align: center;
+}
+
 /* TABLETS & DESKTOPS */
 @media (min-width: 769px) {
   .productList {
@@ -29,6 +34,17 @@
     padding: 40px 2%;
     gap: 40px;
   }
+}
+
+
+.headTitle {
+    font-family: Poppins; /* Heading */
+    font-size: 30px; 
+    line-height: 36px; 
+    font-weight: 700; 
+    text-align: center;
+    margin: 1em auto;
+    color: #F3F4F6FF; 
 }
 
 .loading {

@@ -1,6 +1,6 @@
 import Navigation from "../components/Navigation/Navigation";
 import Header from "../components/Header/Header";
-import Text from "../components/Text";
+
 import ProductsList from "../components/Product/ProductsList";
 import CatergoriesList from "../components/Categories/CategoriesList";
 import Footer from "../components/Footer/Footer";
@@ -11,7 +11,6 @@ export default function Home() {
     return (
         <>
           <Header />
-          <Text />
           <ProductsList />
           <CatergoriesList />
           <Footer />

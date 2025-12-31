@@ -32,6 +32,8 @@ if (isError) {
 
     return (
       <>
+       <p className={styles.headTitle}>Featured Products </p>
+       
         {cartError && <p className={styles.errorMsg}>{cartError}</p>}
 
         <div className={styles.productList}>

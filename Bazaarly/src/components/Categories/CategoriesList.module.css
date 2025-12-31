@@ -1,11 +1,15 @@
+
+
+/* --- TABLET & DESKTOP --- */
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 60px 5%; /* Side padding keeps it from hitting glass */
-  margin-top: 40px; /* Top margin for phones */
+  padding: 0px 5%; /* Side padding keeps it from hitting glass */
+  margin-top: 2cap; /* Top margin for phones */
   width: 100%; 
-  background: #171A1FFF;
+
 }
 
 .head {
@@ -14,6 +18,8 @@
   font-size: 28px;
   font-weight: 700; 
   color: #F3F4F6;
+  width: 100%;
+  text-align: center;
 }
 
 .baseContainer {
@@ -35,61 +41,7 @@
 /* --- TABLET & DESKTOP --- */
 @media (min-width: 769px) {
   .container {
-    align-items: center; 
-    padding: 100px 5%; /* 5% side padding for a wide desktop look */
-    margin-top: 0;
-  }
-
-  .head {
-    font-size: 42px; /* Bigger header */
-    margin-bottom: 60px;
-  }
-
-  .baseContainer {
-    flex-wrap: wrap; 
-    /* Spreads them across the full width */
-    justify-content: space-between; 
-    gap: 40px 2%; /* 40px vertical gap, 2% horizontal gap */
-    max-width: none; /* Removed the restriction to take full screen */
-    overflow-x: visible;
-  }
-}.container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 60px 5%; /* Side padding keeps it from hitting glass */
-  margin-top: 40px; /* Top margin for phones */
-  width: 100%; 
-  background: #171A1FFF;
-}
-
-.head {
-  margin-bottom: 30px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 28px;
-  font-weight: 700; 
-  color: #F3F4F6;
-}
-
-.baseContainer {
-  display: flex;
-  width: 100%;
-  gap: 20px;
-  
-  /* MOBILE SCROLL */
-  overflow-x: auto;
-  flex-wrap: nowrap;
-  padding-bottom: 10px;
-  scrollbar-width: none;
-}
-
-.baseContainer::-webkit-scrollbar {
-  display: none;
-}
-
-/* --- TABLET & DESKTOP --- */
-@media (min-width: 769px) {
-  .container {
+    background-color: #171A1FFF;
     align-items: center; 
     padding: 100px 5%; /* 5% side padding for a wide desktop look */
     margin-top: 0;
