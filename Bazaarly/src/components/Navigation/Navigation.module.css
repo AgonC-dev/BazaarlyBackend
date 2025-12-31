@@ -45,7 +45,7 @@ html, body {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    width: 15%; /* This was causing the squish on mobile */
+    width: 15%;
 }
 
 .cartItemNum {
@@ -135,6 +135,10 @@ html, body {
     align-items: center;
 }
 
+.loggedIn {
+    border: 2px solid #4CAF50 !important;
+}
+
 .dropdown {
     position: absolute;
     top: 3.7em;
@@ -182,20 +186,8 @@ html, body {
     padding: 8px 10px;
 }
 
-/* --- Responsiveness for Navigation --- */
-
-@media (max-width: 1024px) {
-    .right {
-        width: 25%;
-    }
-    .logo {
-        width: 12em;
-    }
-}
-
-/* --- PREMIUM MOBILE LAYOUT (Phones ONLY) --- */
+/* --- PHONE FIXES ONLY --- */
 @media (max-width: 768px) {
-    /* 1. TOP BAR FIX */
     .container {
         position: fixed;
         top: 0;
@@ -208,50 +200,54 @@ html, body {
         z-index: 1001;
     }
 
+    /* Force left and right to share space so icons aren't pushed off */
     .left {
-        width: auto;
+        flex: 1 !important;
+        justify-content: flex-start !important;
     }
     
     .left .logo {
-        width: 100px; /* Slimmer for phone top bar */
+        width: 100px;
         height: auto;
     }
 
-    /* THE FIX: Remove the 15% width restriction for the Cart icon */
+    /* FIX: This makes the Cart and Profile visible on the top right */
     .right {
-        width: auto !important; /* Allow icons to fit naturally */
+        flex: 1 !important;
+        width: auto !important; 
         display: flex !important;
-        gap: 20px; /* Space between cart and profile */
-        justify-content: flex-end;
+        flex-direction: row !important;
+        gap: 15px !important; 
+        justify-content: flex-end !important;
     }
 
     .search {
         display: none; 
     }
 
-    /* 2. PREMIUM BOTTOM BAR */
+    /* PREMIUM BOTTOM NAV */
     .list {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 70px; /* Slightly taller for thumbs */
-        background: rgba(10, 10, 10, 0.98);
-        backdrop-filter: blur(15px);
+        height: 65px;
+        background: #0a0a0a;
         border-top: 1px solid #323743;
         display: flex;
         justify-content: space-around;
-        align-items: stretch; /* Allow items to fill height for dividers */
+        align-items: center;
         padding: 0;
         z-index: 1000;
     }
 
-    /* Adding Vertical Dividers */
-    .list > * {
+    /* Premium Vertical Dividers */
+    .list > li, .list > a, .list > div {
         flex: 1;
+        height: 100%;
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
         border-right: 1px solid rgba(255, 255, 255, 0.1);
     }
 
@@ -259,14 +255,10 @@ html, body {
         border-right: none;
     }
 
-    /* 3. BIGGER MOBILE TEXT */
     .navButton {
-        font-size: 13px; /* Bigger for phone users */
+        font-size: 13px;
         font-weight: 600;
-        padding: 5px;
         color: #FFFFFF;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
     }
 
     .active {
@@ -276,24 +268,9 @@ html, body {
         border-radius: 0;
     }
 
+    /* Space for content */
     :global(body) {
         padding-top: 65px;
-        padding-bottom: 75px;
-    }
-
-    .dropdown {
-        top: 55px;
-        position: fixed;
-        right: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .left .logo {
-        width: 90px;
-    }
-    
-    .navButton {
-        font-size: 11px;
+        padding-bottom: 70px;
     }
 }
