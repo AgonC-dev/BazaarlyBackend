@@ -190,99 +190,146 @@ html, body {
     padding: 8px 10px;
 }
 
-/* --- PREMIUM MOBILE OVERRIDES (PHONES ONLY) --- */
+/* --- MOBILE OVERRIDES (PHONES ONLY) --- */
 @media (max-width: 768px) {
+    .container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 65px;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between; /* Logo left, cart/profile right */
+        align-items: center;
+        background: #000;
+        z-index: 2000;
+        width: 100%;
+    }
 
-  /* ================= TOP BAR ================= */
-  .container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 65px;
-    width: 100%;
-    background: #000;
-    z-index: 3000;
-  }
+    /* Left section - Logo only */
+    .left {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+        width: auto;
+    }
+    
+    /* Hide the navigation list from the top bar on mobile */
+    .left .list {
+        display: none !important;
+    }
+    
+    .left .logo {
+        width: 120px;
+        height: auto;
+        margin: 0;
+    }
 
-  /* Logo stays LEFT */
-  .left {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+    /* Right section - Cart and Profile only */
+    .right {
+        position: static;
+        width: auto !important;
+        display: flex !important;
+        align-items: center;
+        gap: 15px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-  .logo {
-    width: 90px;
-    height: auto;
-  }
+    /* Make the Cart text/number visible */
+    .cartItemNum {
+        color: #0d59f2;
+        font-weight: 700;
+        font-size: 16px;
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: white;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-  /* Cart + profile stay RIGHT */
-  .right {
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    width: auto !important;
-  }
+    /* Cart button container */
+    .right .search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
 
-  /* Hide search icon on mobile */
-  .search {
-    display: none;
-  }
+    /* Search button hidden on mobile */
+    .right .search:first-child {
+        display: none;
+    }
 
-  /* Cart number visibility */
-  .cartItemNum {
-    color: #0d59f2;
-    font-weight: 700;
-    font-size: 15px;
-  }
+    /* Bottom Navigation Bar */
+    .mobileBottomNav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 70px;
+        background: #0a0a0a;
+        border-top: 1px solid #323743;
+        z-index: 2000;
+        display: flex !important;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
 
-  /* ================= BOTTOM NAV ================= */
-  .list {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    background: #0a0a0a;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #323743;
-    z-index: 3000;
-  }
+    .mobileBottomNav li {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+    }
 
-  .list li {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.15);
-  }
+    .mobileBottomNav li:last-child {
+        border-right: none;
+    }
 
-  .list li:last-child {
-    border-right: none;
-  }
+    .mobileBottomNav .navButton {
+        font-size: 12px;
+        font-weight: 600;
+        color: #fff;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
 
-  .navButton {
-    font-size: 12px;
-    font-weight: 600;
-    color: #fff;
-    padding: 0;
-  }
+    .mobileBottomNav .active {
+        background: transparent;
+        color: #0d59f2 !important;
+        border-bottom: 3px solid #0d59f2;
+    }
 
-  .active {
-    background: transparent;
-    color: #0d59f2 !important;
-    border-bottom: 3px solid #0d59f2;
-  }
+    /* Body padding to prevent overlap */
+    :global(body) {
+        padding-top: 70px !important;
+        padding-bottom: 80px !important;
+    }
 
-  /* ================= PAGE SPACING ================= */
-  :global(body) {
-    padding-top: 70px !important;
-    padding-bottom: 80px !important;
-  }
+    /* Adjust dropdown position for mobile */
+    .dropdown {
+        top: 50px;
+        right: -10px;
+    }
 }
