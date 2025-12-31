@@ -129,6 +129,10 @@ html, body {
     height: 36px; 
 }
 
+.break {
+  width: 100%;
+}
+
 .profileWrapper {
     position: relative;
     display: flex;
@@ -188,88 +192,97 @@ html, body {
 
 /* --- PREMIUM MOBILE OVERRIDES (PHONES ONLY) --- */
 @media (max-width: 768px) {
-    .container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 65px;
-        padding: 0 10px;
-        display: flex;
-        justify-content: center; /* Center logo by default */
-        background: #000;
-        z-index: 2000;
-    }
 
-    .left {
-        position: absolute;
-        left: 10px;
-    }
-    
-    .left .logo {
-        width: 90px;
-        height: auto;
-    }
+  /* ================= TOP BAR ================= */
+  .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 65px;
+    width: 100%;
+    background: #000;
+    z-index: 3000;
+  }
 
-    /* THE CART FIX: Move right section to the absolute right side */
-    .right {
-        position: absolute;
-        right: 15px;
-        width: auto !important;
-        display: flex !important;
-        gap: 20px; /* Space between cart and profile */
-        height: 100%;
-    }
+  /* Logo stays LEFT */
+  .left {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-    /* Make the Cart text/number visible on black background */
-    .cartItemNum {
-        color: #0d59f2; /* Make it blue so you can see it */
-        font-weight: 700;
-        font-size: 16px;
-    }
+  .logo {
+    width: 90px;
+    height: auto;
+  }
 
-    .search { display: none; }
+  /* Cart + profile stay RIGHT */
+  .right {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    width: auto !important;
+  }
 
-    /* PREMIUM BOTTOM NAV WITH DIVIDERS */
-    .list {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 70px;
-        background: #0a0a0a;
-        border-top: 1px solid #323743;
-        z-index: 2000;
-    }
+  /* Hide search icon on mobile */
+  .search {
+    display: none;
+  }
 
-    .list > * {
-        flex: 1;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-right: 1px solid rgba(255, 255, 255, 0.15);
-    }
+  /* Cart number visibility */
+  .cartItemNum {
+    color: #0d59f2;
+    font-weight: 700;
+    font-size: 15px;
+  }
 
-    .list > *:last-child {
-        border-right: none;
-    }
+  /* ================= BOTTOM NAV ================= */
+  .list {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #323743;
+    z-index: 3000;
+  }
 
-    .navButton {
-        font-size: 12px;
-        font-weight: 600;
-        color: #fff;
-        padding: 0;
-    }
+  .list li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+  }
 
-    .active {
-        background: transparent;
-        color: #0d59f2 !important;
-        border-bottom: 3px solid #0d59f2;
-    }
+  .list li:last-child {
+    border-right: none;
+  }
 
-    /* Body padding to prevent overlap */
-    :global(body) {
-        padding-top: 70px !important;
-        padding-bottom: 80px !important;
-    }
+  .navButton {
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    padding: 0;
+  }
+
+  .active {
+    background: transparent;
+    color: #0d59f2 !important;
+    border-bottom: 3px solid #0d59f2;
+  }
+
+  /* ================= PAGE SPACING ================= */
+  :global(body) {
+    padding-top: 70px !important;
+    padding-bottom: 80px !important;
+  }
 }

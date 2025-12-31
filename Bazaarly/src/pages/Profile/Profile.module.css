@@ -253,3 +253,94 @@
   line-height: 1.5;
   cursor: pointer;
 }
+
+/* ... (Keep all your existing CSS above) ... */
+
+/* --- RESPONSIVE DESIGN (PHONES) --- */
+@media (max-width: 768px) {
+  .container {
+    margin: 20px 15px; /* Less margin on sides for phones */
+    padding: 25px 20px; /* Tighter padding inside */
+    border-radius: 12px;
+  }
+
+  .title {
+    font-size: 1.5rem; /* Smaller title */
+    margin-bottom: 1.8rem;
+  }
+
+  /* --- SECTIONS --- */
+  .viewRow {
+    flex-direction: column; /* Stack Email and Edit button */
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .value {
+    font-size: 1rem;
+    word-break: break-all; /* Prevents long emails from breaking layout */
+    width: 100%;
+  }
+
+  .editBtn {
+    width: 100%; /* Full width button for easier tapping */
+    text-align: center;
+  }
+
+  /* --- FORMS --- */
+  .editRow, .passForm, .deleteForm {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .buttonGroup {
+    flex-direction: column; /* Stack Update and Cancel buttons */
+    gap: 12px;
+    width: 100%;
+  }
+
+  .saveBtn, .deleteConfirmBtn, .deleteInitBtn {
+    width: 100%;
+    order: 1; /* Primary action on top */
+  }
+
+  .cancelBtn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    order: 2; /* Cancel button below */
+  }
+
+  /* --- DANGER ZONE --- */
+  .deleteCon {
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+  .checkboxRow {
+    gap: 10px;
+  }
+
+  .checkboxLabel {
+    font-size: 0.8rem;
+  }
+
+  /* --- INPUTS --- */
+  .input {
+    font-size: 16px; /* Prevents iOS from auto-zooming on focus */
+    padding: 12px;
+  }
+}
+
+/* Very Small Screen Adjustments */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+  }
+  
+  .label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+}
