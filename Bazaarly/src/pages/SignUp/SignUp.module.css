@@ -341,7 +341,8 @@
 @media (max-width: 480px) {
   .signUpContainer {
     width: 100%;       /* Full width of screen */
-    margin: 0;         /* Remove margins */
+    margin: 1em 0; 
+         /* Remove margins */
     background: transparent; /* Remove the background box */
     box-shadow: none;  /* Cleaner, no heavy shadows on mobile */
     height: auto;      /* Let content define height */

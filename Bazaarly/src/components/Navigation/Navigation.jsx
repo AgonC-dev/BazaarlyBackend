@@ -56,112 +56,52 @@ const handleLogout = async () => {
   navigate('/')
 }
 
- return (
+  return (
     <>
       <div className={styles.container}>
         <div className={styles.left}>
           <Link to='/'><img src={logo} className={styles.logo} alt='Logo'/></Link>
           <ul className={styles.list}> 
-            <li>
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-              `${styles.navButton} ${isActive ? styles.active : ''}`
-              }
-              >
-                Home
-               
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/products"
-                className={({ isActive }) =>
-                `${styles.navButton} ${isActive ? styles.active : ''}`
-                }
-              >
-                Products
-            
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) =>
-                `${styles.navButton} ${isActive ? styles.active : ''}`
-                }
-              >
-                About
-            
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/contact"
-                className={({ isActive }) =>
-                `${styles.navButton} ${isActive ? styles.active : ''}`
-                }
-              >
-                Contact
-         
-              </NavLink>
-            </li>   
+            <li><NavLink to="/" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>Home</NavLink></li>
+            <li><NavLink to="/products" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>Products</NavLink></li>
+            <li><NavLink to="/about" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>About</NavLink></li>
+            <li><NavLink to="/contact" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>Contact</NavLink></li>
           </ul>
         </div>
+
         <div className={styles.right}>
-          <button className={styles.search}>
-            <Link to='cart'><img src={CartIcon} /></Link>
-            <p className={styles.cartItemNum}>
-              {cartItemNum > 0 && `(${cartItemNum})`}
-            </p>
+          {/* SEARCH REMOVED ENTIRELY */}
+          
+          <button className={styles.cartBtn}>
+            <Link to='/cart'><img src={CartIcon} alt="Cart"/></Link>
+            {cartItemNum > 0 && (
+              <p className={styles.cartItemNum}>({cartItemNum})</p>
+            )}
           </button>
+
           <div className={styles.profileWrapper}>
             <button className={`${styles.avatar} ${user ? styles.loggedIn : ''}`} onClick={handleProfileClick}>
-              <img src={Profile} />
+              <img src={Profile} alt="Profile" />
             </button>
             {user && showDropdown && (
               <div className={styles.dropdown}>
-                <div className={styles.userInfo}>
-                  <p>{user.email}</p>
-                </div>
+                <div className={styles.userInfo}><p>{user.email}</p></div>
                 <hr className={styles.break}/>
                 <Link to="/profile" onClick={() => setShowDropdown(false)} className={styles.profileClick}>View Profile</Link>
-                <button onClick={handleLogout} className={styles.logoutBtn}>
-                  Logout
-                </button>
+                <button onClick={handleLogout} className={styles.logoutBtn}>Logout</button>
               </div>
             )}
           </div>
         </div>
       </div>
 
-      {/* Mobile Bottom Navigation - Only appears on mobile */}
+      {/* Mobile Bottom Nav */}
       <ul className={styles.mobileBottomNav}>
-  <li>
-    <NavLink to="/" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
-      <img src={HomeIcon} alt='Home' />
-      <span>Home</span>
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to="/products" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
-      <img src={ProductsIcon} alt='Products' />
-      <span>Products</span>
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to="/about" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
-      <img src={AboutIcon} alt='About' />
-      <span>About</span>
-    </NavLink>
-  </li>
-  <li>
-    <NavLink to="/contact" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
-      <img src={ContactIcon} alt='Contact' />
-      <span>Contact</span>
-    </NavLink>
-  </li>
-</ul>
+        <li><NavLink to="/" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={HomeIcon} /><span>Home</span></NavLink></li>
+        <li><NavLink to="/products" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={ProductsIcon} /><span>Products</span></NavLink></li>
+        <li><NavLink to="/about" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={AboutIcon} /><span>About</span></NavLink></li>
+        <li><NavLink to="/contact" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={ContactIcon} /><span>Contact</span></NavLink></li>
+      </ul>
     </>
- )
+  );
 }

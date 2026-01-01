@@ -259,7 +259,7 @@
 /* --- RESPONSIVE DESIGN (PHONES) --- */
 @media (max-width: 768px) {
   .container {
-    margin: 20px 15px; /* Less margin on sides for phones */
+    margin: 120px 15px; /* Less margin on sides for phones */
     padding: 25px 20px; /* Tighter padding inside */
     border-radius: 12px;
   }

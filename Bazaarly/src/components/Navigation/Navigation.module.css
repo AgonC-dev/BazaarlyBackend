@@ -40,13 +40,25 @@ html, body {
     height: 100%;
 }
 
+/* Updated to width: auto so it doesn't squash the cart/profile */
 .right {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-
+    gap: 20px;
     height: 100%;
-    width: 9%;
+    width: 8.5em;
+   
+    padding-right: 20px;
+}
+
+.cartBtn {
+    background-color: transparent;
+    border: none;
+    justify-content: space-between;
+    display: flex;
+
+    width: 2em;
 }
 
 .cartItemNum {
@@ -94,9 +106,8 @@ html, body {
 }
 
 .search {
-    width: 40px; 
+    width: auto; 
     height: 40px; 
-    padding: 0 10px; 
     display: flex; 
     align-items: center; 
     justify-content: center; 
@@ -105,6 +116,7 @@ html, body {
     opacity: 1; 
     border: none; 
     border-radius: 6px; 
+    cursor: pointer;
 }
 
 .search .icon {
@@ -204,14 +216,13 @@ html, body {
         height: 65px;
         padding: 0 15px;
         display: flex;
-        justify-content: space-between; /* Logo left, cart/profile right */
+        justify-content: space-between; 
         align-items: center;
         background: #000;
         z-index: 2000;
         width: 100%;
     }
 
-    /* Left section - Logo only */
     .left {
         position: static;
         display: flex;
@@ -221,127 +232,102 @@ html, body {
         width: auto;
     }
     
-    /* Hide the navigation list from the top bar on mobile */
     .left .list {
         display: none !important;
     }
     
     .left .logo {
-        width: 200px;
+        width: 160px; /* Sized for mobile */
         height: auto;
         margin: 0;
     }
 
-    /* Right section - Cart and Profile only */
     .right {
         position: static;
         width: auto !important;
         display: flex !important;
         align-items: center;
-        gap: 15px;
+        gap: 2.3em;
         height: 100%;
         margin: 0;
         padding: 0;
     }
 
-    /* Make the Cart text/number visible */
     .cartItemNum {
         color: #0d59f2;
         font-weight: 700;
         font-size: 16px;
-        border-radius: 50%;
+        margin-left: 2px;
+    }
+
+    /* THE FIX: Removed the first-child display:none that was hiding your cart */
+
+    .mobileBottomNav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        background: rgba(19, 21, 26, 0.9);
+        backdrop-filter: blur(12px);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0;
+        padding: 0 0 env(safe-area-inset-bottom) 0;
+        list-style: none;
+        z-index: 1000;
+    }
+
+    .mobileBottomNav li {
+        flex: 1;
+    }
+
+    /* Target mobile-specific nav buttons differently than desktop */
+    .mobileBottomNav .navButton {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.5); 
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 4px;
+        padding: 0;
+        background: transparent;
+    }
+
+    .mobileBottomNav .navButton img {
         width: 22px;
         height: 22px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        filter: brightness(0) invert(0.7); 
+        opacity: 0.6;
+        transition: all 0.3s ease;
     }
 
-    /* Cart button container */
-    .right .search {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
+    .mobileBottomNav .navButton span {
+        font-size: 10px;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0.3px;
     }
 
-    /* Search button hidden on mobile */
-    .right .search:first-child {
-        display: none;
+    /* ACTIVE STATE (Mobile Bottom Nav) */
+    .mobileBottomNav .active {
+        background: transparent; /* No blue background box, just glowing icon/text */
     }
 
-    /* Bottom Navigation Bar */
-    .mobileBottomNav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 65px;
-  background: rgba(19, 21, 26, 0.9); /* High opacity for readability */
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0;
-  padding: 0 0 env(safe-area-inset-bottom) 0;
-  list-style: none;
-  z-index: 1000;
-}
+    .mobileBottomNav .active img {
+        opacity: 1;
+        filter: brightness(0) invert(1) drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.9)); 
+        transform: translateY(-2px);
+    }
 
-.mobileBottomNav li {
-  flex: 1;
-}
-
-.navButton {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  /* Default inactive text color (Muted white) */
-  color: rgba(255, 255, 255, 0.5); 
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: 4px;
-}
-
-.navButton img {
-  width: 22px; /* Slightly smaller looks more professional */
-  height: 22px;
-  filter: brightness(0) invert(0.7); /* Turns black icons to light gray */
-  opacity: 0.6;
-  transition: all 0.3s ease;
-}
-
-.navButton span {
-  font-size: 10px;
-  font-weight: 500;
-  font-family: 'Roboto', sans-serif;
-  letter-spacing: 0.3px;
-}
-
-/* --- THE ACTIVE STATE --- */
-
-/* This targets the NavLink itself when active */
-.active {
-  color: #0D59F2FF !important; 
-}
-
-/* This targets the icon INSIDE the active NavLink */
-.active img {
-  opacity: 1;
-  /* Blue glow + White icon */
-  filter: brightness(0) invert(1) drop-shadow(0px 0px 5px rgba(13, 89, 242, 0.8)); 
-  transform: translateY(-2px);
-}
-
-/* This targets the span INSIDE the active NavLink */
-.active span {
-  opacity: 1;
-  /* Blue glow + White icon */
-  filter: brightness(0) invert(1) drop-shadow(0px 0px 5px rgba(13, 89, 242, 0.8)); 
-  transform: translateY(-2px);
-}
+    .mobileBottomNav .active span {
+        color: #ffffff !important;
+        opacity: 1;
+        text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
+        transform: translateY(-2px);
+    }
 }
