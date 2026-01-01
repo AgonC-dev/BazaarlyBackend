@@ -19,6 +19,8 @@
   width: 40px; 
   height: 40px;
   margin-bottom: 10px;
+  filter: brightness(0) invert(1) sepia(1) saturate(10000%) hue-rotate(109deg) drop-shadow(0px 0px 5px rgba(63, 136, 158, 0.685));
+  transform: translateY(0);
 }
 
 .title {

@@ -315,7 +315,8 @@ html, body {
 
     /* ACTIVE STATE (Mobile Bottom Nav) */
     .mobileBottomNav .active {
-        background: transparent; /* No blue background box, just glowing icon/text */
+        background: #0D59F2FF !important;
+        transition: all 0.3s ease; /* No blue background box, just glowing icon/text */
     }
 
     .mobileBottomNav .active img {
