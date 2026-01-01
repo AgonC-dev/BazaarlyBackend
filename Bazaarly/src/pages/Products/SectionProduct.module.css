@@ -481,12 +481,16 @@
     gap: 0;
   }
 
+  .productsCon {
+    align-self: center;
+  }
+
   /* 1. Header & Title Fix */
   .productsTitle {
     width: 100%;
     margin: 10px 0 20px 0;
     font-size: 22px;
-    text-align: left;
+    text-align: center;
   }
 
   /* 2. Compact Filter Container */
