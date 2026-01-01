@@ -18,7 +18,8 @@ const app = express();
 app.use(cors({
   origin: [
     'https://bazaarly-backend.vercel.app', 
-    'http://localhost:5173'
+    'http://localhost:5173',
+    'https://bazaarly.xyz',
   ], 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
