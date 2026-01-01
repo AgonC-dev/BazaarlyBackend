@@ -337,39 +337,78 @@
 }
 
 /* 3. Mobile Phones (Max width 480px) */
+/* 3. Mobile Phones (Max width 480px) */
 @media (max-width: 480px) {
   .signUpContainer {
-    width: 95%;
-    margin: 10px auto;
-    border-radius: 12px;
+    width: 100%;       /* Full width of screen */
+    margin: 0;         /* Remove margins */
+    background: transparent; /* Remove the background box */
+    box-shadow: none;  /* Cleaner, no heavy shadows on mobile */
+    height: auto;      /* Let content define height */
+    display: block;    /* Stack everything naturally */
+    padding: 40px 20px; /* High padding for a "spacious" look */
+  }
+
+  /* Simulate a phone border/safe area if needed, 
+     otherwise this ensures text doesn't hit edges */
+  .leftCon {
+    padding: 0 10px; 
   }
 
   .title {
-    font-size: 22px;
-    padding: 0 10px;
+    font-size: 28px;   /* Slightly larger for modern feel */
+    text-align: left;  /* Left align often looks cleaner on mobile */
+    margin-bottom: 10px;
+    color: #ffffff;
   }
 
   .text {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 0 15px;
+    font-size: 15px;
+    text-align: left;  /* Match title alignment */
+    margin-bottom: 30px;
+    padding: 0;
   }
 
   .inputCon {
-    width: 90%;
+    width: 100%;       /* Inputs take full available width */
+    gap: 12px;         /* More space between label and input */
+    margin-bottom: 20px;
+  }
+
+  .input {
+    height: 52px;      /* Taller inputs are easier to tap on phones */
+    background: #111318; /* Slightly lighter than pure black for depth */
+    border-radius: 12px; /* Rounder corners for "modern" feel */
+    font-size: 16px;   /* Prevents iOS auto-zoom on focus */
   }
 
   .label {
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 4px;
+    color: #9CA3AF;    /* Muted label color */
   }
 
   .signUpBtn {
-    width: 90%;
-    font-size: 16px;
+    width: 100%;
+    height: 54px;      /* Beefy primary button */
+    margin-top: 20px;
+    font-weight: 600;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(13, 89, 242, 0.3); /* Subtle button glow */
   }
 
-  .questionLink {
-    width: auto; /* Allow link to fit text width */
-    padding: 0 5px;
+  .termsCon {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .accQuestionCon {
+    margin-top: 2;
+  }
+
+  .accQuestionCon a {
+    width: 3.2em;
   }
 }

@@ -8,6 +8,10 @@ import { useContext, useState, useEffect } from 'react';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../../api/firebase';
 import { CartContext } from '../../Context/CartContext';
+import HomeIcon from '../../assets/home-phone-icon.svg';
+import ProductsIcon from '../../assets/products-phone-icon.svg';
+import AboutIcon from '../../assets/about-phone-icon.svg';
+import ContactIcon from '../../assets/contact-phone-icon.svg';
 
 
 export default function Navigation() {
@@ -66,6 +70,7 @@ const handleLogout = async () => {
               }
               >
                 Home
+               
               </NavLink>
             </li>
             <li>
@@ -76,6 +81,7 @@ const handleLogout = async () => {
                 }
               >
                 Products
+            
               </NavLink>
             </li>
             <li>
@@ -86,6 +92,7 @@ const handleLogout = async () => {
                 }
               >
                 About
+            
               </NavLink>
             </li>
             <li>
@@ -96,6 +103,7 @@ const handleLogout = async () => {
                 }
               >
                 Contact
+         
               </NavLink>
             </li>   
           </ul>
@@ -131,48 +139,32 @@ const handleLogout = async () => {
       </div>
 
       {/* Mobile Bottom Navigation - Only appears on mobile */}
-      <ul className={styles.mobileBottomNav}>
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              `${styles.navButton} ${isActive ? styles.active : ''}`
-            }
-          >
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/products"
-            className={({ isActive }) =>
-              `${styles.navButton} ${isActive ? styles.active : ''}`
-            }
-          >
-            Products
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              `${styles.navButton} ${isActive ? styles.active : ''}`
-            }
-          >
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/contact"
-            className={({ isActive }) =>
-              `${styles.navButton} ${isActive ? styles.active : ''}`
-            }
-          >
-            Contact
-          </NavLink>
-        </li>
-      </ul>
+   <ul className={styles.mobileBottomNav}>
+  <li>
+    <NavLink to="/" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
+      <img src={HomeIcon} alt='Home' />
+      <span>Home</span>
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/products" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
+      <img src={ProductsIcon} alt='Products' />
+      <span>Products</span>
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/about" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
+      <img src={AboutIcon} alt='About' />
+      <span>About</span>
+    </NavLink>
+  </li>
+  <li>
+    <NavLink to="/contact" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
+      <img src={ContactIcon} alt='Contact' />
+      <span>Contact</span>
+    </NavLink>
+  </li>
+</ul>
     </>
  )
 }

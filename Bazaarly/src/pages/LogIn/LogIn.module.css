@@ -267,79 +267,117 @@
 
 /* --- RESPONSIVE FIXES (Only for Phones) --- */
 /* --- RESPONSIVE FIXES (Only for Phones) --- */
+/* --- UPDATED RESPONSIVE FIXES (Modern Dark Phone Style) --- */
+
 @media (max-width: 768px) {
+    /* 1. Remove the bulky box for a cleaner "app" feel */
     .logContainer {
-        width: 92%;         /* Scale container to phone width */
-        min-width: 92%;
-        height: auto;       /* Let it grow with content */
-        padding: 30px 15px; /* Add internal spacing so things aren't tight */
-        margin: 20px auto;
+        width: 100%;
+        min-width: 100%;
+        background: transparent; /* Removes the #1E2128FF box */
+        border: none;            /* Removes the border */
+        box-shadow: none;        /* Removes the shadow */
+        height: auto;
+        margin: 0;
+        padding: 40px 20px;      /* High padding for "phone borders" spacing */
+        animation: fadeIn 0.5s ease-in-out;
     }
 
+    /* 2. Align typography to the left for a modern mobile look */
     .title {
-        font-size: 26px;
-        margin-bottom: 10px;
+        text-align: left;
+        font-size: 32px;
+        margin-bottom: 8px;
+        padding-left: 5%;
     }
 
     .text {
-        margin-bottom: 25px; /* Space out the sub-text */
+        text-align: left;
+        font-size: 15px;
+        margin-bottom: 35px;
+        padding-left: 5%;
     }
 
+    /* 3. Inputs: Wider and easier to tap */
     .emailCon {
-        margin-bottom: 15px; /* Space between the email and password blocks */
+        margin-bottom: 20px;
     }
 
     .label {
-        margin-left: 5%;    /* Reduce that huge 18% margin for phones */
-        margin-bottom: 5px;
-        font-size: 15px;
+        margin-left: 5%;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: #9CA3AF; /* Muted label color */
     }
 
     .input {
-        width: 90% !important; /* Force input to fit phone width */
-        height: 50px;          /* Slightly taller for easier tapping */
-        margin: 0 auto 10px auto;
+        width: 90% !important;
+        height: 54px;         /* Taller for fat-finger friendly tapping */
+        background: #111318;  /* Slightly lighter dark for contrast */
+        border-radius: 12px;
+        font-size: 16px;      /* Prevents iOS zoom-on-focus */
+        margin-bottom: 5px;
     }
 
+    /* 4. Forgot Password Link */
+    .forget {
+        width: 90%;
+        margin-left: 5%;
+        text-align: left;
+        font-size: 13px;
+        margin-top: 5px;
+    }
+
+    /* 5. Main Login Button */
     .logIn {
         width: 90% !important;
-        margin: 20px auto;     /* Add spacing around the main button */
+        height: 56px;
+        margin: 30px auto 15px auto;
         border-radius: 12px;
+        font-size: 18px;
+        box-shadow: 0px 4px 15px rgba(13, 89, 242, 0.2);
     }
 
+    /* 6. Social Login Section */
     .middle {
-        margin: 20px 0;        /* Space out the "OR CONTINUE WITH" text */
+        margin: 25px 0;
+        opacity: 0.6;
+        font-size: 11px;
+        letter-spacing: 1px;
     }
 
     .continue {
-        gap: 12px;             /* Space between Google and Facebook buttons */
-        margin: 10px auto;
+        gap: 12px;
+        margin-top: 0;
     }
 
     .blackButton {
-        width: 90% !important; /* Force social buttons to fit */
-        height: 50px;
+        width: 90% !important;
+        height: 54px;
+        border-radius: 12px;
+        background: #111318;
     }
 
-    .forget {
-        width: 90%;
-        text-align: left;
-        margin-left: 5%;      /* Align with the label and input */
-    }
-
+    /* 7. Footer (Sign Up link) */
     .accDiv {
-        margin-top: 25px;      /* Spacing before the "Sign Up" footer */
-        padding-bottom: 10px;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #323743; /* Separator line */
+    }
+
+    /* Ensure Success/Error boxes fit the screen */
+    .successBox, .error {
+        width: 90% !important;
+        margin: 15px auto;
     }
 }
 
-/* Fix for very small phones */
+/* Specific fix for very small devices */
 @media (max-width: 400px) {
     .title {
-        font-size: 22px;
+        font-size: 26px;
     }
-    
     .logContainer {
-        padding: 20px 10px;
+        padding: 30px 10px;
     }
 }
