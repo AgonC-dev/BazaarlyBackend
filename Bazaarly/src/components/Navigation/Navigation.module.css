@@ -277,15 +277,15 @@ html, body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 65px; /* Standard height for bottom nav */
-  background: rgba(19, 21, 26, 0.877); /* Matches your #1E2128FF */
-  backdrop-filter: blur(10px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  height: 65px;
+  background: rgba(19, 21, 26, 0.9); /* High opacity for readability */
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 0;
-  padding: 0 0 env(safe-area-inset-bottom) 0; /* Respects iPhone "notch" at bottom */
+  padding: 0 0 env(safe-area-inset-bottom) 0;
   list-style: none;
   z-index: 1000;
 }
@@ -294,44 +294,51 @@ html, body {
   flex: 1;
 }
 
- .navButton {
+.navButton {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  /* Make inactive text a light gray so it's readable */
+  /* Default inactive text color (Muted white) */
   color: rgba(255, 255, 255, 0.5); 
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   gap: 4px;
 }
 
 .navButton img {
-  width: 24px;
-  height: 24px;
-  /* If your icons are black, this turns them light gray/white */
-  filter: brightness(0) invert(0.7); 
+  width: 22px; /* Slightly smaller looks more professional */
+  height: 22px;
+  filter: brightness(0) invert(0.7); /* Turns black icons to light gray */
   opacity: 0.6;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .navButton span {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.3px;
 }
 
 /* --- THE ACTIVE STATE --- */
+
+/* This targets the NavLink itself when active */
 .active {
-  /* Text becomes your vibrant blue */
   color: #0D59F2FF !important; 
 }
 
+/* This targets the icon INSIDE the active NavLink */
 .active img {
   opacity: 1;
-  /* This turns the icon fully white or keeps it bright */
-  filter: brightness(0) invert(1); 
-  /* Add a subtle blue glow to the icon itself */
-  filter: drop-shadow(0px 0px 8px rgba(13, 89, 242, 0.6)) brightness(0) invert(1);
+  /* Blue glow + White icon */
+  filter: brightness(0) invert(1) drop-shadow(0px 0px 5px rgba(13, 89, 242, 0.8)); 
   transform: translateY(-2px);
+}
+
+/* This targets the span INSIDE the active NavLink */
+.active span {
+  color: #0D59F2FF;
+  font-weight: 600;
 }
 }

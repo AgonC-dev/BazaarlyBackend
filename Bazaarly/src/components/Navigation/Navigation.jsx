@@ -139,7 +139,7 @@ const handleLogout = async () => {
       </div>
 
       {/* Mobile Bottom Navigation - Only appears on mobile */}
-   <ul className={styles.mobileBottomNav}>
+      <ul className={styles.mobileBottomNav}>
   <li>
     <NavLink to="/" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>
       <img src={HomeIcon} alt='Home' />
