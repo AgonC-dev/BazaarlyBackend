@@ -110,9 +110,6 @@ const handleLogout = async () => {
         </div>
         <div className={styles.right}>
           <button className={styles.search}>
-            <img src={searchIcon} />
-          </button>
-          <button className={styles.search}>
             <Link to='cart'><img src={CartIcon} /></Link>
             <p className={styles.cartItemNum}>
               {cartItemNum > 0 && `(${cartItemNum})`}
