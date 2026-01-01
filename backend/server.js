@@ -17,9 +17,9 @@ const app = express();
 // This allows your specific Vercel frontend and your local development environment
 app.use(cors({
   origin: [
-    'https://bazaarly-backend.vercel.app', 
     'http://localhost:5173',
     'https://bazaarly.xyz',
+    'https://www.bazaarly.xyz',
   ], 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization']
