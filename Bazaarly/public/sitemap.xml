@@ -1,113 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- MAIN PAGES -->
   <url>
     <loc>https://www.bazaarly.xyz/</loc>
-    <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://www.bazaarly.xyz/products</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://www.bazaarly.xyz/about</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://www.bazaarly.xyz/contact</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://www.bazaarly.xyz/terms</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.6</priority>
   </url>
 
-  <!-- PRODUCT DETAIL PAGES (ID BASED) -->
-  <url>
-    <loc>https://www.bazaarly.xyz/products/1</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/2</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/3</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/4</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/5</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/6</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/7</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/8</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/9</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/10</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/11</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/12</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.bazaarly.xyz/products/13</loc>
-    <lastmod>2026-01-01</lastmod>
-    <priority>0.8</priority>
-  </url>
+  <url><loc>https://www.bazaarly.xyz/products/1</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/2</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/3</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/4</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/5</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/6</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/7</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/8</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/9</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/10</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/11</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/12</loc></url>
+  <url><loc>https://www.bazaarly.xyz/products/13</loc></url>
 
 </urlset>
