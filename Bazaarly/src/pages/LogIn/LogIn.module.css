@@ -203,6 +203,68 @@
   border: none;
 }
 
+/* Container for the success message */
+/* The Main Success Box */
+.successBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  /* Dark Glass effect */
+  background: rgba(16, 185, 129, 0.1); /* Very subtle green tint */
+  backdrop-filter: blur(8px); /* Blurs background for a premium feel */
+  border: 1px solid rgba(16, 185, 129, 0.3); /* Transparent emerald border */
+  
+  border-radius: 12px;
+  padding: 2px 15px;
+  margin: 15px 0;
+  
+  /* Text styling */
+  color: #34d399; /* Bright emerald text to pop on dark background */
+  font-size: 0.9rem;
+  font-weight: 500;
+  
+  /* Shadow to give depth on dark UI */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 
+              0 0 15px rgba(16, 185, 129, 0.1); 
+  
+  animation: fadeInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Close Button (Minimalist) */
+.closeBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #34d399;
+  font-size: 0.8rem;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  margin-left: 12px;
+}
+
+.closeBtn:hover {
+  background: rgba(16, 185, 129, 0.2);
+  color: #ffffff;
+}
+
+/* Modern smooth animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
 /* --- RESPONSIVE FIXES (Only for Phones) --- */
 /* --- RESPONSIVE FIXES (Only for Phones) --- */
 @media (max-width: 768px) {
