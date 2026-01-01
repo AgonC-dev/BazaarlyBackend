@@ -278,7 +278,7 @@
         border: none;            /* Removes the border */
         box-shadow: none;        /* Removes the shadow */
         height: auto;
-        margin: 0;
+        margin: 1em 0;
         padding: 40px 20px;      /* High padding for "phone borders" spacing */
         animation: fadeIn 0.5s ease-in-out;
     }
@@ -379,5 +379,6 @@
     }
     .logContainer {
         padding: 30px 10px;
+        margin: 1em 0;
     }
 }

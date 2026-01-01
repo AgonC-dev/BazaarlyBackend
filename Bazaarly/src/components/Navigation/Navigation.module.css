@@ -226,7 +226,7 @@ html, body {
     }
     
     .left .logo {
-        width: 120px;
+        width: 200px;
         height: auto;
         margin: 0;
     }
@@ -278,7 +278,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 65px; /* Standard height for bottom nav */
-  background: rgba(30, 33, 40, 0.95); /* Matches your #1E2128FF */
+  background: rgba(19, 21, 26, 0.877); /* Matches your #1E2128FF */
   backdrop-filter: blur(10px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
@@ -294,38 +294,44 @@ html, body {
   flex: 1;
 }
 
-.navButton {
+ .navButton {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #BDC1CAFF; /* Muted text */
+  /* Make inactive text a light gray so it's readable */
+  color: rgba(255, 255, 255, 0.5); 
   transition: all 0.3s ease;
-  gap: 4px; /* Space between icon and text */
+  gap: 4px;
 }
 
 .navButton img {
-  width: 24px;  /* Perfectly sized for mobile */
+  width: 24px;
   height: 24px;
-  opacity: 0.7;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  /* If your icons are black, this turns them light gray/white */
+  filter: brightness(0) invert(0.7); 
+  opacity: 0.6;
+  transition: all 0.2s ease;
 }
 
 .navButton span {
-  font-size: 10px; /* Small text for bottom nav */
+  font-size: 11px;
   font-weight: 500;
-  font-family: 'Roboto', sans-serif;
 }
 
-/* ACTIVE STATE */
+/* --- THE ACTIVE STATE --- */
 .active {
-  color: #0D59F2FF !important; /* Your primary blue */
+  /* Text becomes your vibrant blue */
+  color: #0D59F2FF !important; 
 }
 
 .active img {
   opacity: 1;
-  transform: translateY(-2px); /* Slight lift effect */
-  filter: drop-shadow(0px 0px 5px rgba(13, 89, 242, 0.4)); /* Glow effect */
+  /* This turns the icon fully white or keeps it bright */
+  filter: brightness(0) invert(1); 
+  /* Add a subtle blue glow to the icon itself */
+  filter: drop-shadow(0px 0px 8px rgba(13, 89, 242, 0.6)) brightness(0) invert(1);
+  transform: translateY(-2px);
 }
 }
