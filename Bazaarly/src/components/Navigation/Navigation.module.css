@@ -140,6 +140,85 @@ html, body {
     display: none;
 }
 
+.profileWrapper {
+  position: relative; /* Essential for positioning the dropdown */
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 15px);
+  right: 0;
+  width: 240px;
+  /* Deep, solid background for 100% text readability */
+  background-color: #16191f; 
+  /* A sharp, thin white border to define the shape against the dark site */
+  border: 1px solid #3f4451; 
+  border-radius: 12px;
+  padding: 8px; /* Inner spacing so hover states don't hit the edge */
+  box-shadow: 
+    0 10px 15px -3px rgba(0, 0, 0, 0.4),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05); /* Extra thin inner "shimmer" line */
+  z-index: 1000;
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* A sophisticated scale-up animation instead of a slide */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.userInfo {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.03); /* Slightly lighter box for email */
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.userInfo p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccd1db; /* Brighter grey for better legibility */
+  font-weight: 400;
+  word-break: break-all;
+}
+
+.break {
+  display: none; /* Removed the line because we use the userInfo box instead */
+}
+
+.profileClick, .logoutBtn {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 6px; /* Rounded buttons inside the menu */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-align: left;
+}
+
+/* Hovering feels like a desktop OS menu (Mac/Windows) */
+.profileClick:hover {
+  background: #0D59F2FF; /* Your signature blue */
+  color: #ffffff;
+}
+
+.logoutBtn {
+  color: #ff4d4d;
+  margin-top: 4px;
+}
+
+.logoutBtn:hover {
+  background: #ff4d4d; /* Full red background on hover */
+  color: #ffffff;
+}
 /* --- MOBILE OVERRIDES (PHONES ONLY) --- */
 @media (max-width: 768px) {
 
@@ -153,6 +232,7 @@ html, body {
         background: #000;
         z-index: 2000;
     }
+    
 
     .left .list {
         display: none !important;
