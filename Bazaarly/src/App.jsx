@@ -81,12 +81,68 @@ const router = createBrowserRouter([
 
 
 
-
+const MAINTENANCE = true;
 
 
 
 
 function App() {
+   if (MAINTENANCE) {
+    return (
+      <div
+        style={{
+          minHeight: '100vh',
+          background: 'radial-gradient(circle at top, #0f172a, #020617)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontFamily: 'Inter, system-ui, sans-serif',
+          color: '#e5e7eb',
+        }}
+      >
+        <div
+          style={{
+            textAlign: 'center',
+            padding: '3rem 4rem',
+            borderRadius: '16px',
+            background: 'rgba(15, 23, 42, 0.85)',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
+            backdropFilter: 'blur(10px)',
+          }}
+        >
+          <h1
+            style={{
+              fontSize: '3rem',
+              marginBottom: '1rem',
+              color: '#3b82f6',
+              letterSpacing: '1px',
+            }}
+          >
+            Bazaarly
+          </h1>
+
+          <p
+            style={{
+              fontSize: '1.1rem',
+              marginBottom: '0.5rem',
+              opacity: 0.9,
+            }}
+          >
+            We’re working on something awesome.
+          </p>
+
+          <span
+            style={{
+              fontSize: '0.9rem',
+              opacity: 0.7,
+            }}
+          >
+            Coming Soon 🚀
+          </span>
+        </div>
+      </div>
+    )
+  }
   return <RouterProvider router={router} />
 }
 
