@@ -5,27 +5,81 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-color: #f9fafb;
+  /* Deep Midnight Background */
+  background-color: #0a0a0b;
+  overflow: hidden;
 }
 
+/* Container for the rich animation */
+.animationWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+/* The Main Glowing Ring */
 .bazaarlySpinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #e5e7eb;
-  border-top: 5px solid #3b82f6; /* Your brand blue */
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  border: 2px solid transparent;
+  border-top-color: #3b82f6;
+  border-bottom-color: #3b82f6;
+  filter: drop-shadow(0 0 10px #3b82f6);
+  animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+/* The Inner Pulsing Orb */
+.orb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #3b82f6, 0 0 60px #3b82f6;
+  animation: pulse 2s ease-in-out infinite;
 }
 
 .loaderText {
-  margin-top: 1.5rem;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #4b5563;
-  font-weight: 500;
-  letter-spacing: 0.5px;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  /* Bigger, bolder font */
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  
+  /* Neon Flicker Effect */
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #3b82f6, 0 0 42px #3b82f6;
+  animation: flicker 2s infinite alternate, fadeIn 1.5s ease-out;
 }
+
+/* Keyframes */
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.5); opacity: 1; filter: brightness(1.3); }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #3b82f6, 0 0 42px #3b82f6;
+  }
+  20%, 24%, 55% {       
+    text-shadow: none;
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

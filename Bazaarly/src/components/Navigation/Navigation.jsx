@@ -12,11 +12,14 @@ import HomeIcon from '../../assets/home-phone-icon.svg';
 import ProductsIcon from '../../assets/products-phone-icon.svg';
 import AboutIcon from '../../assets/about-phone-icon.svg';
 import ContactIcon from '../../assets/contact-phone-icon.svg';
+import useAnonymousAuth from '../../hooks/AnonymousAuth';
 
 
 export default function Navigation() {
 const [ user, setUser ] = useState(null);
 const [ showDropdown, setShowDropdown ] = useState(false);
+const [ isAnonymous, setIsAnonymous] = useState(false)
+const { user: AnoUser, loading} = useAnonymousAuth();
 
 const navigate = useNavigate();
 const { cart }= useContext(CartContext);
@@ -43,7 +46,7 @@ useEffect(() => {
 const handleProfileClick = (e) => {
  e.stopPropagation();
 
-  if(!user) {
+  if(!user || user.isAnonymous ) {
     navigate('/login');
   } else {
     setShowDropdown(!showDropdown);
@@ -51,9 +54,10 @@ const handleProfileClick = (e) => {
 }
 
 const handleLogout = async () => {
-  await signOut(auth);
+  
   setShowDropdown(false);
-  navigate('/')
+  await signOut(auth);
+  // navigate('/')
 }
 
   return (

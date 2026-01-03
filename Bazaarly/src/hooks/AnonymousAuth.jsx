@@ -1,8 +1,9 @@
-import { getAuth, signInAnonymously, onAuthStateChanged } from "firebase/auth";
+import { signInAnonymously, onAuthStateChanged } from "firebase/auth";
+import { auth } from '../api/firebase.js';
 import { useEffect } from "react";
 import { useState } from "react";
 
-const auth = getAuth();
+
 
 function useAnonymousAuth() {
  const [user, setUser] = useState(null);

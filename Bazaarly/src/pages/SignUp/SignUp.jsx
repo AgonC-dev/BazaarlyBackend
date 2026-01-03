@@ -3,6 +3,8 @@ import Photo from '../../assets/signup.png'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { register } from '../../api/auth';
+import useAnonymousAuth from '../../hooks/AnonymousAuth';
+import { useEffect } from 'react';
 
 
 export default function SignUp() {
@@ -12,9 +14,16 @@ export default function SignUp() {
   const [password, setPassword] = useState('');
   const [confirm, setConfirm] = useState('');
   const [error, setError] = useState('');
+  const { user, loading } = useAnonymousAuth();
   const [isPending, setIsPending] = useState(false)
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!loading && user && !user.isAnonymous) {
+      navigate('/');
+    }
+  }, [user, loading, navigate]);
 
 
   async function handleSubmit(e) {

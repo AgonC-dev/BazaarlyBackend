@@ -7,6 +7,8 @@ import { sendPasswordResetEmail } from "firebase/auth";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { login } from '../../api/auth'; 
 import { auth } from '../../api/firebase'
+import useAnonymousAuth from '../../hooks/AnonymousAuth';
+import { useEffect } from 'react';
 
 export default function LogIn() {
 const [email, setEmail] = useState('');
@@ -14,8 +16,18 @@ const [ resetSent, setResetSent] = useState(false)
 const [password, setPassword] = useState('');
 const [error, setIsError] = useState('')
 const [isPending, setIsPending] = useState(false)
+const { user, loading } = useAnonymousAuth();
 const navigate = useNavigate();
 const location = useLocation();
+const from = location.state?.from?.pathname || "/";
+
+
+useEffect(() => {
+  if(!loading && user && !user.isAnonymous) {
+    navigate(from, { replace: true})
+  }
+}, [user, loading, navigate, from])
+
 
 function handleSignUp() {
     navigate('/signup')
@@ -34,7 +46,7 @@ async function handleReset() {
   }
 }
 
-const from = location.state?.from?.pathname || "/";
+
 
 
 async function handleSubmit(e)  {
