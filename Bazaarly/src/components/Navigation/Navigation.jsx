@@ -99,7 +99,7 @@ const handleLogout = async () => {
       <ul className={styles.mobileBottomNav}>
         <li><NavLink to="/" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={HomeIcon} /><span>Home</span></NavLink></li>
         <li><NavLink to="/products" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={ProductsIcon} /><span>Products</span></NavLink></li>
-        <li><NavLink to="/about" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={AboutIcon} /><span>About</span></NavLink></li>
+        <li><NavLink to="/abolut" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={AboutIcon} /><span>About</span></NavLink></li>
         <li><NavLink to="/contact" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}><img src={ContactIcon} /><span>Contact</span></NavLink></li>
       </ul>
     </>
