@@ -1,4 +1,6 @@
 import { createBrowserRouter, redirectDocument, RouterProvider } from 'react-router-dom';
+import { useEffect } from 'react';
+import useAnonymousAuth from './hooks/AnonymousAuth.jsx'; 
 import RootLayout from './pages/Root.jsx';
 import GuestRoute from './components/GuestRoute.jsx';
 import Home from './pages/Home.jsx';
@@ -14,6 +16,7 @@ import Terms from './pages/Terms/Terms.jsx';
 import ProtectedRoute from './components/ProtecteRoute.jsx';
 import Maintenance from './components/Maintenance/Maintenance.jsx';
 import ErrorPage from './components/Error/Error.jsx';
+import Loading from './components/Loading/Loading.jsx';
 
 
 const router = createBrowserRouter([
@@ -90,8 +93,15 @@ const MAINTENANCE = false;
 
 
 function App() {
+
+const {user, loading} = useAnonymousAuth();
+
   if(MAINTENANCE) {
    return   <Maintenance />
+  }
+
+  if(loading ) {
+    return <Loading />
   }
 
   return <RouterProvider router={router} />

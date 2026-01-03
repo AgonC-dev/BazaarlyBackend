@@ -1,8 +1,22 @@
+require('dotenv').config();
+
 const admin = require('firebase-admin');
 const fs = require('fs');
 
 // Initialize Firebase Admin SDK
-const serviceAccount = require('./serviceAccountKey.json');
+const serviceAccountValue = process.env.FIREBASE_SERVICE_ACCOUNT;
+
+if (!serviceAccountValue) {
+  throw new Error("❌ FIREBASE_SERVICE_ACCOUNT is not defined in environment variables!");
+}
+
+// 2. Parse the string into an object
+const serviceAccount = JSON.parse(serviceAccountValue);
+
+// Fix for private_key newline characters (common issue with environment variables)
+if (serviceAccount.private_key) {
+  serviceAccount.private_key = serviceAccount.private_key.replace(/\\n/g, '\n');
+}
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
