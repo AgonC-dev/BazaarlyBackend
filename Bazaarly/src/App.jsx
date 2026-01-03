@@ -12,6 +12,8 @@ import ProductDetail from './pages/ProductsDetail/ProductsDetail.jsx';
 import About from './pages/About/About.jsx';
 import Terms from './pages/Terms/Terms.jsx';
 import ProtectedRoute from './components/ProtecteRoute.jsx';
+import Maintenance from './components/Maintenance/Maintenance.jsx';
+import ErrorPage from './components/Error/Error.jsx';
 
 
 const router = createBrowserRouter([
@@ -19,6 +21,7 @@ const router = createBrowserRouter([
 {
   path: '/',
   element: <RootLayout />,
+  errorElement: <ErrorPage />,
   children: [
     {
       index:true,
@@ -87,62 +90,10 @@ const MAINTENANCE = false;
 
 
 function App() {
-   if (MAINTENANCE) {
-    return (
-      <div
-        style={{
-          minHeight: '100vh',
-          background: 'radial-gradient(circle at top, #0f172a, #020617)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontFamily: 'Inter, system-ui, sans-serif',
-          color: '#e5e7eb',
-        }}
-      >
-        <div
-          style={{
-            textAlign: 'center',
-            padding: '3rem 4rem',
-            borderRadius: '16px',
-            background: 'rgba(15, 23, 42, 0.85)',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
-            backdropFilter: 'blur(10px)',
-          }}
-        >
-          <h1
-            style={{
-              fontSize: '3rem',
-              marginBottom: '1rem',
-              color: '#3b82f6',
-              letterSpacing: '1px',
-            }}
-          >
-            Bazaarly
-          </h1>
-
-          <p
-            style={{
-              fontSize: '1.1rem',
-              marginBottom: '0.5rem',
-              opacity: 0.9,
-            }}
-          >
-            We’re working on something awesome.
-          </p>
-
-          <span
-            style={{
-              fontSize: '0.9rem',
-              opacity: 0.7,
-            }}
-          >
-            Coming Soon 🚀
-          </span>
-        </div>
-      </div>
-    )
+  if(MAINTENANCE) {
+   return   <Maintenance />
   }
+
   return <RouterProvider router={router} />
 }
 

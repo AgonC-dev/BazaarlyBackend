@@ -64,7 +64,7 @@ const handleLogout = async () => {
           <ul className={styles.list}> 
             <li><NavLink to="/" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>Home</NavLink></li>
             <li><NavLink to="/products" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>Products</NavLink></li>
-            <li><NavLink to="/about" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>About</NavLink></li>
+            <li><NavLink to="/abkout" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>About</NavLink></li>
             <li><NavLink to="/contact" className={({ isActive }) => `${styles.navButton} ${isActive ? styles.active : ''}`}>Contact</NavLink></li>
           </ul>
         </div>
