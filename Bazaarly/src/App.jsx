@@ -87,7 +87,7 @@ const router = createBrowserRouter([
 
 
 
-const MAINTENANCE = false;
+const MAINTENANCE = true;
 
 
 
