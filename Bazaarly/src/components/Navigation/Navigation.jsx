@@ -19,7 +19,6 @@ export default function Navigation() {
 const [ user, setUser ] = useState(null);
 const [ showDropdown, setShowDropdown ] = useState(false);
 const [ isAnonymous, setIsAnonymous] = useState(false)
-const { user: AnoUser, loading} = useAnonymousAuth();
 
 const navigate = useNavigate();
 const { cart }= useContext(CartContext);

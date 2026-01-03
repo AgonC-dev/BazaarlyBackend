@@ -1,7 +1,7 @@
 // cartService.js
 import { doc, setDoc, getDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "./firebase";
-import { deleteDoc } from "firebase/firestore";
+import { deleteDoc, increment, updateDoc } from "firebase/firestore";
 
 /**
  * Add a product to the user's cart in Firestore
@@ -14,14 +14,11 @@ export async function addToCart(userId, product) {
   const cartRef = doc(db, "users", userId, "cart", cartItemId);
   const snapshot = await getDoc(cartRef);
 
-  if (snapshot.exists()) {
-    // Product already in cart → increment quantity
-    const data = snapshot.data();
-    await setDoc(cartRef, {
-      ...data,
-      quantity: data.quantity + ( product.quantity || 1)
-    });
-  } else {
+ if (snapshot.exists()) {
+  await updateDoc(cartRef, {
+    quantity: increment(product.quantity || 1)
+  });
+} else {
     // Product not in cart → create new document
     await setDoc(cartRef, {
       id: product.id,
@@ -59,4 +56,19 @@ export async function deleteCartItem(userId, Id) {
 
   const cartRef = doc(db, "users", userId, "cart", Id);
   await deleteDoc(cartRef);
+}
+
+
+export async function updateCartQuantity(userId, item, newQuantity) {
+  if (!userId) return;
+
+  const cartItemId = item.size
+    ? `${item.id}-${item.size}`
+    : item.id;
+
+  const cartRef = doc(db, "users", userId, "cart", cartItemId);
+
+  await updateDoc(cartRef, {
+    quantity: newQuantity
+  });
 }

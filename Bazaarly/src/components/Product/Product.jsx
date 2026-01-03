@@ -37,6 +37,7 @@ export default function Product({
       onError?.('Please log in to add items to your cart!');
       return;
     }
+     setAdded(true);
 
     const productPayload = {
       id,
@@ -48,7 +49,7 @@ export default function Product({
     };
 
     // ✅ Optimistic UI update
-    setAdded(true);
+   
     dispatch({
       type: 'ADD_ITEM',
       payload: productPayload

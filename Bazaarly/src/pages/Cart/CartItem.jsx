@@ -3,7 +3,7 @@ import TrashIcon from '../../assets/trash.svg?react';
 import { auth } from '../../api/firebase';
 import { useContext} from 'react';
 import { CartContext } from '../../Context/CartContext';
-import { deleteCartItem, fetchUserCart } from '../../api/cartService';
+import { deleteCartItem, fetchUserCart, updateCartQuantity } from '../../api/cartService';
  
 
 
@@ -14,12 +14,33 @@ const quantity = item.quantity
 
 
 
-function IncreaseQuantity() {
-  dispatch({type: 'INCREASE_QUANTITY', payload: { id: item.id, size: item.size }})
+async function IncreaseQuantity() {
+const user = auth.currentUser;
+if(!user) return;
+
+  const newQuantity = item.quantity + 1;
+
+  dispatch({type: 'INCREASE_QUANTITY', 
+    payload: { id: item.id, size: item.size }
+  })
+
+  await updateCartQuantity(user.uid, item, newQuantity);
 }
 
-function DecreaseQuantity() {
-  dispatch({ type: 'DECREASE_QUANTITY', payload: {id: item.id, size: item.size}})
+async function DecreaseQuantity() {
+  const user = auth.currentUser;
+  if(!user) {
+    return
+  }
+  
+  const newQuantity = item.quantity - 1;
+
+  dispatch({ type: 'DECREASE_QUANTITY', 
+    payload: {id: item.id, size: item.size}
+  })
+  
+  await updateCartQuantity(user.uid, item, newQuantity)
+
 }
 
 function quantityInputHandler(e) {

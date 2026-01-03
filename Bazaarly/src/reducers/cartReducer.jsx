@@ -14,7 +14,7 @@ export function CartReducer(state, action) {
             item
         );
       } else {
-        return [...state, {...action.payload, quantity: 1 || 1}]
+        return [...state, {...action.payload}]
       }
      
     }
